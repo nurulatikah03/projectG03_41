@@ -74,11 +74,11 @@
 		if($validUser){
 			$userType=getUserType($_POST['email']);
 			if($userType=='ADMIN'){
-				echo "<script>window.top.location='../startbootstrap-sb-admin-gh-pages/startbootstrap-sb-admin-gh-pages/index.html'</script>";
+				echo "<script>window.top.location='../startbootstrap-sb-admin-gh-pages/index.html'</script>";
 			}else if($userType=='STAFF'){
-				echo "<script>window.top.location='../startbootstrap-sb-admin-gh-pages/startbootstrap-sb-admin-gh-pages/index.html'</script>";
+				echo "<script>window.top.location='../startbootstrap-sb-admin-gh-pages/index.html'</script>";
 			}else{
-				echo "<script>window.top.location='homePage.php'</script>";
+				echo "<script>window.top.location='../startbootstrap-sb-admin-gh-pages/homepage.html'</script>";
 			}
 		}
 		else{
