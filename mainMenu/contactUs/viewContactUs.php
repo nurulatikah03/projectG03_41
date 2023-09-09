@@ -13,7 +13,35 @@
         <link href="css/styles.css" rel="stylesheet" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-    </head>
+		<style>
+			h3{
+				font-family:'Lato'; 
+				font-style:normal; 
+				font-weight:400;
+				text-align:center;
+			}
+				
+			iframe{
+				position:absolute;
+				text-align:center;
+				width:900px;
+				height:500px;
+			}
+			
+			.gmap_canvas{
+				overflow:hidden;
+				text-align:center;
+				width:600px;
+				height:400px;
+			}
+			
+			.gmap_iframe {
+				text-align:center;
+				width:600px!important;
+				height:400px!important;
+			}
+		</style>
+	</head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
@@ -60,25 +88,47 @@
 					</div>
                 </nav>
 			</div>	
-            <div id="layoutSidenav_content">
-                <main>
-                    <div class="container-fluid px-4">
-                        <h1 class="mt-4">Contact Us</h1>
-                </main>
+		<div id="layoutSidenav_content">
+            <main>
+				<div class="container-fluid px-4">
+					<h1 class="mt-4">Contact Us</h1>
+					<div class="w3-section">
+						<hr>
+						<div class="jumbotron text-center">
+							<img src="image/KFC.jpg" style="width:70%; height:400px">
+							<hr style="width:200px:bold" class="w3-opacity" >
+						</div>
 					</div>
+					<div class="container">
+					<h3>
+						<i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i>
+						Gurney Mall, 8, Jln Maktab,<br>&nbsp;&nbsp;&nbsp;
+						Kampung Datuk Keramat, 54000<br>&nbsp;&nbsp;&nbsp;
+						Kuala Lumpur, Federal Territory of<br>&nbsp;&nbsp;&nbsp;
+						Kuala Lumpur<br><br>
+					</h3>
+		
+					<h3>
+						<i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> 
+						Phone: +603-2602 1587<br><br>
+					</h3>
+		
+					<h3>
+						<i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> 
+						Email: kfcresidencyutmkl@gmail.com
+					</h3><br><br>
+				<div class="container-fluid px-4">		
+					<div class="mapouter">
+						<div class="gmap_canvas">
+							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.705095857183!2d101.71970647581325!3d3.1721353530091796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc376f6af06fff%3A0xd68f5fcabfc16f94!2sKFC%20Gurney%20Mall!5e0!3m2!1sen!2smy!4v1694249679945!5m2!1sen!2smy"
+							style="border:0;"></iframe><br><br><br>
+						</div>
+					</div>
+				</div>
+			</main>
 			</div>
-                <footer class="py-4 bg-light mt-auto">
-                    <div class="container-fluid px-4">
-                        <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2023</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
+			</div>
+			</div>
 		</div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
