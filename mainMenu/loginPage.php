@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Login - Customer</title>
+        <title>Login Page</title>
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
@@ -74,15 +74,15 @@
 		if($validUser){
 			$userType=getUserType($_POST['email']);
 			if($userType=='ADMIN'){
-				echo "<script>window.top.location='../startbootstrap-sb-admin-gh-pages/index.html'</script>";
+				echo "<script>window.top.location='../startbootstrap-sb-admin-gh-pages/dashboardAdmin.html'</script>";
 			}else if($userType=='STAFF'){
-				echo "<script>window.top.location='../startbootstrap-sb-admin-gh-pages/index.html'</script>";
+				echo "<script>window.top.location='../startbootstrap-sb-admin-gh-pages/dashboardStaff.html'</script>";
 			}else{
 				echo "<script>window.top.location='../startbootstrap-sb-admin-gh-pages/homepage.html'</script>";
 			}
 		}
 		else{
-			echo '<script>alert("invalid user")</script>';
+			echo '<script>alert("Invalid user")</script>';
 		}
 	}
 	
