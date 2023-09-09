@@ -66,19 +66,37 @@
                         <h1 class="mt-4">About Us</h1>
 						<div class="jumbotron text-center">
 							<img src="image/KFCview.png" style="width:40%;height:400px">
+							<style>
+								h1, h3, p{font-family:'Lato'; font-style:normal; font-weight:400; text-align:center;}
+							</style>
+							
 							<h3>KFC NILAI SQUARE OUTLET</h3>
-  							<p>The first certified green restaurant in Malaysia</p>
+  							<p>The first certified green restaurant in Malaysia</p><br>
 						</div>
   
 						<div class="container">
  							<h3>KFC MALAYSIA</h3>
-  							<p>The KFC Malaysia story began with the opening of our 1st 
-  							restaurant on Jalan Tunku Abdul Rahman in 1973. There are 
-  							currently over 600 KFC restaurants nationwide serving Malaysians 
-  							great tasting chicken 365 days a year. As the No. 1 fast food and 
-  							leading QSR brand in Malaysia, we are constantly working to 
-  							better serve our customers with great moments, excellent services
-  							and Finger Lickin' Good food.<br><br></p>
+  						
+						<p>The KFC Malaysia story began with the opening of our 1st restaurant on Jalan Tunku Abdul Rahman in 1973. 
+						There are currently over 600 KFC restaurants nationwide serving Malaysians great tasting chicken 365 days a 
+						year. As the No. 1 fast food and leading QSR brand in Malaysia, we are constantly working to better serve our 
+						customers with great moments, excellent servicesand Finger Lickin' Good food.<br><br></p>
+						
+							<h3>Especially for Malaysians</h3>
+						
+						<p>We are an establishment that is run by Malaysians and managed by Malaysians; we took it upon ourselves to 
+						create a selection of food that would make Malaysia proud on the international scene. Kentucky Nuggets, for 
+						example, was conceived in Malaysia and then found its way to KFC worldwide. Today, Kentucky Nuggets is one of 
+						KFC's successes.</p>
+						
+						<div class="jumbotron text-center">
+						<img src="image/image1.png" style="width:60%; height:400px"><br><br>
+						
+						<p>"Meals on Wheels" was also developed in Malaysia. It was created for the purpose of bringing great tasting 
+						chicken to places where a KFC Restaurant might not be available. So, any offices or companies can hold functions 
+						at any place and anytime!<br><br>
+						All our achievements add to our Malaysian identity. But it has only been possible because you invited us to share 
+						your lives.</p>
 						</div>
                         
                 </main>
@@ -96,6 +114,7 @@
                         </div>
                     </div>
                 </footer>
+				</div>
 		</div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
