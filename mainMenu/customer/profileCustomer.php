@@ -1,3 +1,9 @@
+<?php
+session_start();
+$qry=getUserInfo();
+$row=mysqli_fetch_assoc($qry);
+//$row['email'];
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -64,8 +70,49 @@
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Profile</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Your information:</li>
+							<div class="col-lg-8">
+								<div class="card mb-4">
+								  <div class="card-body">
+									<div class="row">
+									  <div class="col-sm-3">
+										<p class="mb-0">First Name</p>
+									  </div>
+									  <div class="col-sm-9">
+										<p class="text-muted mb-0"><?php echo $row['firstName']?></p><!--FirstName-->
+									  </div>
+									</div>
+									<hr>
+									<div class="row">
+									  <div class="col-sm-3">
+										<p class="mb-0">Last Name</p>
+									  </div>
+									  <div class="col-sm-9">
+										<p class="text-muted mb-0"><?php echo $row['lastName']?></p><!--LastName-->
+									  </div>
+									</div>
+									<hr>
+									<div class="row">
+									  <div class="col-sm-3">
+										<p class="mb-0">Email</p>
+									  </div>
+									  <div class="col-sm-9">
+										<p class="text-muted mb-0"><?php echo $row['email']?></p><!--example@example.com-->
+									  </div>
+									</div>
+									<hr>
+									<div class="row">
+									  <div class="col-sm-3">
+										<p class="mb-0">Password</p>
+									  </div>
+									  <div class="col-sm-9">
+										<p class="text-muted mb-0"><?php echo $row['password']?></p><!--8888888-->
+									  </div>
+									</div>
+									</div>
+								  </div>
+								</div>
                         </ol>
+						<button type="button" class="btn btn-success" onclick="window.location.href='../editProfile.php';">Edit</button>
                         
                 </main>
 					</div>
@@ -92,3 +139,20 @@
         <script src="js/datatables-simple-demo.js"></script>
     </body>
 </html>
+
+<?php
+function getUserInfo()
+{
+$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+if(!$con)
+	{
+	echo  mysqli_connect_error(); 
+	exit;
+	}
+	$emailLogin=$_SESSION['emailLogin'];
+	$sql = 'select * from user_info where email = "'.$emailLogin.'"';
+	$qry=mysqli_query($con,$sql);
+	return $qry;
+}
+
+?>
