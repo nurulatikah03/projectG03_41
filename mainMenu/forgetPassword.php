@@ -67,7 +67,7 @@ session_start();
 <?php
 $_SESSION['emailToChangePass']=$_POST['emailToSend'];
 $emailToSend=$_POST['emailToSend'];
-$message = "Hi, to change password ,<a href=\"http://localhost/ProjectSD/mainMenu/changePassword.php\">click here</a>";
+$message = "Hi, to change password ,<a href=\"http://localhost/projectG03_41/mainMenu/changePassword.php\">click here</a>";
 $headers  = 'MIME-Version: 1.0' . "\r\n";
 $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 

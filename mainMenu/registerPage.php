@@ -55,6 +55,10 @@ echo'
                                                     </div>
                                                 </div>
                                             </div>
+											<div class="form-floating mb-3">
+                                                <input class="form-control" id="inputPhoneNum" type="text" placeholder="Phone Number" name="phoneNum" required/>
+                                                <label for="inputPhoneNum">Phone Number</label>
+                                            </div>
                                             <div class="mt-4 mb-0">
 												<div class="d-grid"><button class="btn btn-primary btn-block" type="submit" name="registerButton">Create Account</button></div>
                                             </div>
@@ -106,9 +110,11 @@ function registerAcc(){
 	$userType="CUSTOMER";
 	$firstName=$_POST['firstName'];
 	$lastName=$_POST['lastName'];
-	$sql = "insert into user_info(email,password,firstName,lastName,userType) values('$email', '$password','$firstName','$lastName','$userType')";
+	$phoneNum=$_POST['phoneNum'];
+	$sql = "insert into user_info(email,password,firstName,lastName,userType,phoneNum) values('$email', '$password','$firstName','$lastName','$userType','$phoneNum')";
 	mysqli_query($con,$sql);
 	echo "<script>window.top.location='loginPage.php'</script>";
+	
 	}
 }
 
