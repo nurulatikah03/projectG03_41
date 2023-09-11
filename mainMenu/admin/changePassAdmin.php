@@ -9,7 +9,7 @@ session_start();
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Password Reset - Customer</title>
+        <title>Change Password - Admin</title>
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
@@ -23,20 +23,16 @@ session_start();
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Password Recovery</h3></div>
                                     <div class="card-body">
-                                        <div class="small mb-3 text-muted">Enter your email address and we will send you a link to reset your password.</div>
+                                        <div class="small mb-3 text-muted">Enter Your New Password</div>
                                         <form action="" method="POST">
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" name="emailToSend"/>
-                                                <label for="inputEmail">Email address</label>
+                                                <input class="form-control" id="newPassword" type="Password" placeholder="Password" name="passwordToChange"/>
+                                                <label for="inputEmail">New Password</label>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <a class="small" href="loginPage.php">Return to login</a>
-                                                <button class="btn btn-primary" type="submit" name="resetButton">Reset</button>
+                                                <button class="btn btn-primary" type="submit" name="resetButton">Change</button>
                                             </div>
                                         </form>
-                                    </div>
-                                    <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="registerPage.php">Need an account? Sign up!</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -65,13 +61,21 @@ session_start();
 </html>
 
 <?php
-$_SESSION['emailToChangePass']=$_POST['emailToSend'];
-$emailToSend=$_POST['emailToSend'];
-$message = "Hi, to change password ,<a href=\"http://localhost/projectG03_41/mainMenu/changePassword.php\">click here</a>";
-$headers  = 'MIME-Version: 1.0' . "\r\n";
-$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-
 if(isSet($_POST['resetButton'])){
-	mail($emailToSend,"Reset Password",$message,$headers);
+	changePassword();
+}
+
+function changePassword(){
+	$emailToChangePass=$_SESSION['emailLogin'];
+	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+	if(!$con)
+	{
+	echo  mysqli_connect_error(); 
+	exit;
+	}
+	$sql= "UPDATE user_info SET password = '".$_POST['passwordToChange']."' WHERE email = '".$emailToChangePass."'";
+	//echo $sql;
+	mysqli_query($con,$sql);
+	echo "<script>window.top.location='profileAdmin.php'</script>";
 }
 ?>

@@ -46,6 +46,12 @@ echo'
                                                         <label for="inputPassword">Password</label>
                                                     </div>
                                                 </div>
+												<div class="form-floating mb-3">
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                        <input class="form-control" type="text" placeholder="New Phone Number" name="newPhoneNum" required/>
+                                                        <label for="inputPhoneNum">Phone Number</label>
+                                                    </div>
+                                                </div>
                                             <div class="mt-4 mb-0">
 												<div class="d-grid"><button class="btn btn-primary btn-block" type="submit" name="editDetailsButton">Confirm</button></div>
                                             </div>
@@ -75,8 +81,7 @@ echo'
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
     </body>
- ';
- 
+ '; 
  if(isSet($_POST['editDetailsButton'])){
 		editDetails();
 	}
@@ -93,13 +98,37 @@ function editDetails(){
 	$password=$_POST['newPassword'];
 	$firstName=$_POST['newFirstName'];
 	$lastName=$_POST['newLastName'];
-	$sql = "UPDATE user_info SET firstName='".$firstName."', lastName='".$lastName."', password='".$password."' WHERE email='".$email."'";
-	echo $sql;
+	$phoneNum=$_POST['newPhoneNum'];
+	$sql = "UPDATE user_info SET firstName='".$firstName."', lastName='".$lastName."', password='".$password."',phoneNum='".$phoneNum."' WHERE email='".$email."'";
+	//echo $sql;
 	mysqli_query($con,$sql);
-	echo "<script>window.top.location='loginPage.php'</script>";
+	$userType=getUserType($_SESSION['emailLogin']);
+	if($userType=='ADMIN')
+		echo "<script>window.top.location='admin/profileAdmin.php'</script>";
+	else if($userType=='STAFF')
+		echo "<script>window.top.location='staff/profileStaff.php'</script>";
+	else
+		echo"<script>window.top.location='customer/profileCustomer.php'</script>";
 	}
 }
 
+function getUserType($email)
+{
+$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+if(!$con)
+	{
+	echo  mysqli_connect_error(); 
+	exit;
+	}
+$sql= "SELECT * FROM user_info where email = '".$email."'";
+$result=mysqli_query($con,$sql);
+$count=mysqli_num_rows($result); //check how many matching record - should be 1 if correct
+if($count == 1){
+	$row = mysqli_fetch_assoc($result);
+	$userType=$row['userType'];
+	return $userType;
+	}
+}
 ?>
 </html>
 
