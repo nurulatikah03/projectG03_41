@@ -39,6 +39,8 @@ $row=mysqli_fetch_assoc($qry);
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="profileCustomer.php">Profile</a></li>
                         <li><hr class="dropdown-divider" /></li>
+						<li><a class="dropdown-item" href="changePassCustomer.php">Change Password</a></li>
+                        <li><hr class="dropdown-divider" /></li>
                         <li><a class="dropdown-item" href="../../mainMenu/loginPage.php">Logout</a></li>
                     </ul>
                 </li>
@@ -97,15 +99,6 @@ $row=mysqli_fetch_assoc($qry);
 									  </div>
 									  <div class="col-sm-9">
 										<p class="text-muted mb-0"><?php echo $row['email']?></p><!--example@example.com-->
-									  </div>
-									</div>
-									<hr>
-									<div class="row">
-									  <div class="col-sm-3">
-										<p class="mb-0">Password</p>
-									  </div>
-									  <div class="col-sm-9">
-										<p class="text-muted mb-0"><?php echo $row['password']?></p><!--8888888-->
 									  </div>
 									</div>
 									<hr>

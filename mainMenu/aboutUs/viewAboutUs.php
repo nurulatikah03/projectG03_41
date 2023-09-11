@@ -34,6 +34,8 @@
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="../../mainMenu/customer/profileCustomer.php">Profile</a></li>
                         <li><hr class="dropdown-divider" /></li>
+						<li><a class="dropdown-item" href="../customer/changePassCustomer.php">Change Password</a></li>
+                        <li><hr class="dropdown-divider" /></li>
                         <li><a class="dropdown-item" href="../../mainMenu/logout.php">Logout</a></li>
                     </ul>
                 </li>
