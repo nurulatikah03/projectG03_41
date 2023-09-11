@@ -40,12 +40,6 @@ echo'
                                                     </div>
                                                 </div>
                                             </div>
-                                                <div class="form-floating mb-3">
-                                                    <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" type="password" placeholder="New Password" name="newPassword" required/>
-                                                        <label for="inputPassword">Password</label>
-                                                    </div>
-                                                </div>
 												<div class="form-floating mb-3">
                                                     <div class="form-floating mb-3 mb-md-0">
                                                         <input class="form-control" type="text" placeholder="New Phone Number" name="newPhoneNum" required/>
@@ -95,11 +89,10 @@ function editDetails(){
 	else{
 	//echo "connected";
 	$email=$_SESSION['emailLogin'];
-	$password=$_POST['newPassword'];
 	$firstName=$_POST['newFirstName'];
 	$lastName=$_POST['newLastName'];
 	$phoneNum=$_POST['newPhoneNum'];
-	$sql = "UPDATE user_info SET firstName='".$firstName."', lastName='".$lastName."', password='".$password."',phoneNum='".$phoneNum."' WHERE email='".$email."'";
+	$sql = "UPDATE user_info SET firstName='".$firstName."', lastName='".$lastName."',phoneNum='".$phoneNum."' WHERE email='".$email."'";
 	//echo $sql;
 	mysqli_query($con,$sql);
 	$userType=getUserType($_SESSION['emailLogin']);
