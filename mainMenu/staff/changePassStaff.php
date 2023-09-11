@@ -9,7 +9,7 @@ session_start();
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Password Reset</title>
+        <title>Change Password - Staff</title>
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
@@ -30,7 +30,7 @@ session_start();
                                                 <label for="inputEmail">New Password</label>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <button class="btn btn-primary" type="submit" name="resetButton">Reset</button>
+                                                <button class="btn btn-primary" type="submit" name="resetButton">Change</button>
                                             </div>
                                         </form>
                                     </div>
@@ -66,7 +66,7 @@ if(isSet($_POST['resetButton'])){
 }
 
 function changePassword(){
-	$emailToChangePass=$_SESSION['emailToChangePass'];
+	$emailToChangePass=$_SESSION['emailLogin'];
 	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
 	if(!$con)
 	{
@@ -76,6 +76,6 @@ function changePassword(){
 	$sql= "UPDATE user_info SET password = '".$_POST['passwordToChange']."' WHERE email = '".$emailToChangePass."'";
 	//echo $sql;
 	mysqli_query($con,$sql);
-	echo "<script>window.top.location='loginPage.php'</script>";
+	echo "<script>window.top.location='profileStaff.php'</script>";
 }
 ?>
