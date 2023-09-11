@@ -10,7 +10,7 @@ include "processOTP.php";
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Password Reset - Customer</title>
+        <title>Please Enter Your OTP</title>
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
@@ -22,22 +22,18 @@ include "processOTP.php";
                         <div class="row justify-content-center">
                             <div class="col-lg-5">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Password Recovery</h3></div>
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">One-Time Password</h3></div>
                                     <div class="card-body">
-                                        <div class="small mb-3 text-muted">Enter your email address and we will send you an OTP to reset your password.</div>
+                                        <div class="small mb-3 text-muted">Enter Your OTP</div>
                                         <form action="" method="POST">
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" name="emailToSend"/>
-                                                <label for="inputEmail">Email address</label>
+                                                <input class="form-control" id="newPassword" type="text" placeholder="otp" name="otpEntered"/>
+                                                <label for="inputEmail">OTP</label>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <a class="small" href="loginPage.php">Return to login</a>
-                                                <button class="btn btn-primary" type="submit" name="resetButton">Reset</button>
+                                                <button class="btn btn-primary" type="submit" name="otpButton">ENTER</button>
                                             </div>
                                         </form>
-                                    </div>
-                                    <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="registerPage.php">Need an account? Sign up!</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -66,15 +62,10 @@ include "processOTP.php";
 </html>
 
 <?php
-if(isSet($_POST['resetButton'])){
-	$otp=generateOTP();
-	$_SESSION['emailToChangePass']=$_POST['emailToSend'];
-	saveOTPinUser_otp($_SESSION['emailToChangePass'],$otp);
-	$emailToSend=$_POST['emailToSend'];
-	$message = "Hi, This is your OTP - ".$otp;
-	$headers  = 'MIME-Version: 1.0' . "\r\n";
-	$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-	mail($emailToSend,"Reset Password OTP",$message,$headers);
-	header("Location:enterOTPForgetPass.php");
+if(isSet($_POST['otpButton'])){
+	if($_POST['otpEntered']==validateOTP($_SESSION['emailToChangePass'])){
+		deleteUsedOTP($_SESSION['emailToChangePass']);
+		header("Location:changePassword.php");
+	}
 }
 ?>

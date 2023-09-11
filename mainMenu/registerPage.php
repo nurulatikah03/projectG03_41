@@ -1,6 +1,10 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <?php
+include 'processOTP.php';
 echo'
     <head>
         <meta charset="utf-8" />
@@ -93,28 +97,39 @@ echo'
     </body>
  ';
  
- if(isSet($_POST['registerButton'])){
-		registerAcc();
+ //register button
+if(isSet($_POST['registerButton'])){
+	$_SESSION['emailToRegister']=$_POST['email'];
+	$_SESSION['passwordRegister']=$_POST['password'];
+	$_SESSION['firstNameRegister']=$_POST['firstName'];
+	$_SESSION['lastNameRegister']=$_POST['lastName'];
+	$_SESSION['phoneNumRegister']=$_POST['phoneNum'];
+	sendOTPToRegisterEmail();
+	echo "<script>window.top.location='enterOTP.php'</script>";
+	}
+
+if(isSet($_POST['otpButton'])){
+	if(validateOTP($_SESSION['emailToRegister'])==$_POST['otpEntered']){
+	registerAcc();
+	}
 	}
 	
 function registerAcc(){
 	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
-	
 	if(!$con){
 	echo "Error : ".mysqli_connect_error($con);
 	}
 	else{
-		//echo "connected";
-	$email=$_POST['email'];
-	$password=$_POST['password'];
+	$email=$_SESSION['emailToRegister'];
+	$password=$_SESSION['passwordRegister'];
 	$userType="CUSTOMER";
-	$firstName=$_POST['firstName'];
-	$lastName=$_POST['lastName'];
-	$phoneNum=$_POST['phoneNum'];
+	$firstName=$_SESSION['firstNameRegister'];
+	$lastName=$_SESSION['lastNameRegister'];
+	$phoneNum=$_SESSION['phoneNumRegister'];
 	$sql = "insert into user_info(email,password,firstName,lastName,userType,phoneNum) values('$email', '$password','$firstName','$lastName','$userType','$phoneNum')";
 	mysqli_query($con,$sql);
+	deleteUsedOTP($email);
 	echo "<script>window.top.location='loginPage.php'</script>";
-	
 	}
 }
 
