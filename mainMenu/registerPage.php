@@ -54,7 +54,7 @@ echo'
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputPasswordConfirm" type="password" placeholder="Confirm password" />
+                                                        <input class="form-control" id="inputPasswordConfirm" type="password" placeholder="Confirm password" name="confirmPassword" required/>
                                                         <label for="inputPasswordConfirm">Confirm Password</label>
                                                     </div>
                                                 </div>
@@ -104,8 +104,12 @@ if(isSet($_POST['registerButton'])){
 	$_SESSION['firstNameRegister']=$_POST['firstName'];
 	$_SESSION['lastNameRegister']=$_POST['lastName'];
 	$_SESSION['phoneNumRegister']=$_POST['phoneNum'];
+	if($_POST['password']==$_POST['confirmPassword']){
 	sendOTPToRegisterEmail();
 	echo "<script>window.top.location='enterOTP.php'</script>";
+	}else{
+		echo "<script>alert('Wrong Password')</script>";
+	}
 	}
 
 if(isSet($_POST['otpButton'])){
