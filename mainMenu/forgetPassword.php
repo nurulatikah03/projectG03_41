@@ -27,7 +27,7 @@ include "processOTP.php";
                                         <div class="small mb-3 text-muted">Enter your email address and we will send you an OTP to reset your password.</div>
                                         <form action="" method="POST">
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" name="emailToSend"/>
+                                                <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" name="emailToSend" required/>
                                                 <label for="inputEmail">Email address</label>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
