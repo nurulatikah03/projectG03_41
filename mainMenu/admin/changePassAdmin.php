@@ -26,7 +26,7 @@ session_start();
                                         <div class="small mb-3 text-muted">Enter Your New Password</div>
                                         <form action="" method="POST">
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="newPassword" type="Password" placeholder="Password" name="passwordToChange"/>
+                                                <input class="form-control" id="newPassword" type="Password" placeholder="Password" name="passwordToChange" required/>
                                                 <label for="inputEmail">New Password</label>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
