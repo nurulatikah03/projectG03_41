@@ -25,11 +25,11 @@ session_start();
                                     <div class="card-body">
                                         <form action="" method="POST">
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" name="email"/>
+                                                <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" name="email"  required>
                                                 <label for="inputEmail">Email address</label>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputPassword" type="password" placeholder="Password" name="password"/>
+                                                <input class="form-control" id="inputPassword" type="password" placeholder="Password" name="password"  required>
                                                 <label for="inputPassword">Password</label>
                                             </div>
                                             <div class="form-check mb-3">
