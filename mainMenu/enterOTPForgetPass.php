@@ -12,6 +12,11 @@ include "processOTP.php";
         <meta name="author" content="" />
         <title>Please Enter Your OTP</title>
         <link href="css/styles.css" rel="stylesheet" />
+		<style>body {
+            background-image: url('background.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }</style
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="bg-primary">
@@ -27,7 +32,7 @@ include "processOTP.php";
                                         <div class="small mb-3 text-muted">Enter Your OTP</div>
                                         <form action="" method="POST">
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="newPassword" type="text" placeholder="otp" name="otpEntered"/>
+                                                <input class="form-control" id="newPassword" type="text" placeholder="otp" name="otpEntered" required>
                                                 <label for="inputEmail">OTP</label>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
@@ -46,11 +51,6 @@ include "processOTP.php";
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy; Your Website 2023</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>
                         </div>
                     </div>
                 </footer>

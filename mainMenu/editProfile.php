@@ -13,6 +13,11 @@ echo'
         <meta name="author" content="" />
         <title>Edit Profile</title>
         <link href="css/styles.css" rel="stylesheet" />
+		<style>body {
+            background-image: url("background.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }</style
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="bg-primary">
@@ -62,11 +67,6 @@ echo'
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy; Your Website 2023</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>
                         </div>
                     </div>
                 </footer>
