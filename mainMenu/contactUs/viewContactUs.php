@@ -24,7 +24,7 @@
 			iframe{
 				position:absolute;
 				text-align:center;
-				width:900px;
+				width:700px;
 				height:500px;
 			}
 			
@@ -121,7 +121,7 @@
 					</h3><br><br>
 				<div class="container-fluid px-4">		
 					<div class="mapouter">
-						<div class="gmap_canvas">
+						<div class="gmap_canvas" >
 							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.705095857183!2d101.71970647581325!3d3.1721353530091796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc376f6af06fff%3A0xd68f5fcabfc16f94!2sKFC%20Gurney%20Mall!5e0!3m2!1sen!2smy!4v1694249679945!5m2!1sen!2smy"
 							style="border:0;"></iframe><br><br><br>
 						</div>
