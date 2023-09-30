@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -29,11 +32,11 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="../mainMenu/admin/profileAdmin.php">Profile</a></li>
+                        <li><a class="dropdown-item" href="../../mainMenu/admin/profileAdmin.php">Profile</a></li>
 						<li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="../mainMenu/admin/changePassAdmin.php">Change Password</a></li>
+                        <li><a class="dropdown-item" href="../../mainMenu/admin/changePassAdmin.php">Change Password</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="../mainMenu/logout.php">Logout</a></li>
+                        <li><a class="dropdown-item" href="../../mainMenu/logout.php">Logout</a></li>
                     </ul>
                 </li>
             </ul>
@@ -43,13 +46,13 @@
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <a class="nav-link" href="dashboardAdmin.html">
+                            <a class="nav-link" href="../dashboardAdmin.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
-							<a class="nav-link" href="staffList/staffList.php">
+							<a class="nav-link" href="staffList.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Staff List
-							<a class="nav-link" href="customerList/customerList.php">
+							<a class="nav-link" href="../customerList/customerList.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Customer List
 						</div>	
@@ -63,13 +66,54 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Dashboard</h1>
+                        <h1 class="mt-4">Staff List</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Dashboard</li>
+                            <table class="table">
+							<thead>
+								<tr class="table-primary">
+									<th>Email</th>
+									<th>First Name</th>
+									<th>Last Name</th>
+									<th>Phone Number</th>
+									<th>Edit</th>
+									<th>Delete</th>
+								</tr>
+							</thead>
+							<?php
+							$qry=getListOfStaff();
+							while($row=mysqli_fetch_assoc($qry)){
+							echo "
+							<tbody>
+								<tr>
+									<td>".$row['email']."</td>
+									<td>".$row['firstName']."</td>
+									<td>".$row['lastName']."</td>
+									<td>".$row['phoneNum']."</td>";
+									$email = $row['email'];
+									echo "<td>
+									<form action='' method='POST'>
+										<input type='hidden' value='$email' name='staffEmailToEdit'>
+										<button class='btn btn-success' name='editStaffButton'>Edit</button>
+									</form>
+									</td>";
+									echo "<td>
+									<form action='' method='POST'>
+										<input type='hidden' value='$email' name='staffEmailToDelete'>
+										<button class='btn btn-danger' name='deleteStaffButton'>DELETE</button>
+									</form>
+									</td>
+								</tr>
+							</tbody>
+							";
+							}
+							?>
+							</table>
+							<form action="addStaff.php">
+								<button class="btn btn-dark">Add Staff</button>
+							</form>
                         </ol>
-                        
-                </main>
-					</div>
+                    </div>
+                </main>		
 			</div>
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
@@ -88,3 +132,27 @@
         <script src="js/datatables-simple-demo.js"></script>
     </body>
 </html>
+<?php
+if(isSet($_POST['deleteStaffButton'])){
+	deleteStaff($_POST['staffEmailToDelete']);
+}
+if(isSet($_POST['editStaffButton'])){
+	$_SESSION['staffEmailToEdit']=$_POST['staffEmailToEdit'];
+	echo "<script>window.top.location='editStaff.php'</script>";
+}
+
+function getListOfStaff()
+{
+	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+	$sql = "select * from user_info where userType='STAFF'";
+	$qry = mysqli_query($con,$sql);
+	return $qry;  
+}
+
+function deleteStaff($email){
+	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+	$sql = "delete from user_info where email='".$email."'";
+	mysqli_query($con,$sql);
+	echo "<script>window.top.location='staffList.php'</script>";
+}
+?>
