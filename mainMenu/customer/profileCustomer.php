@@ -7,7 +7,7 @@ $row=mysqli_fetch_assoc($qry);
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Feliciano - Free Bootstrap 4 Template by Colorlib</title>
+    <title>Profile</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -42,14 +42,14 @@ $row=mysqli_fetch_assoc($qry);
 		    		<div class="row d-flex">
 		    			<div class="col-md pr-4 d-flex topper align-items-center">
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
-						    <span class="text">+ 1235 2355 98</span>
+						    <span class="text">+ 603-2602 1587</span>
 					    </div>
 					    <div class="col-md pr-4 d-flex topper align-items-center">
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
-						    <span class="text">youremail@email.com</span>
+						    <span class="text">kfcresidencyutmkl@gmail.com</span>
 					    </div>
 					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right justify-content-end">
-						    <p class="mb-0 register-link"><span>Open hours:</span> <span>Monday - Sunday</span> <span>8:00AM - 9:00PM</span></p>
+						    <p class="mb-0 register-link"><span>Open hours:</span> <span>Monday - Sunday</span> <span>9:00AM - 10:00PM</span></p>
 					    </div>
 				    </div>
 			    </div>
@@ -58,26 +58,26 @@ $row=mysqli_fetch_assoc($qry);
     </div>
 	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Feliciano</a>
+	      <a class="navbar-brand" href="index.html">KFC</a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	        	<li class="nav-item"><a href="../../feliciano-master/index.html" class="nav-link">Home</a></li>
-	        	<li class="nav-item"><a href="../../feliciano-master/about.html" class="nav-link">About</a></li>
-	        	<li class="nav-item"><a href="../../feliciano-master/menu.html" class="nav-link">Menu</a></li>
-	          <li class="nav-item"><a href="../../feliciano-master/contact.html" class="nav-link">Contact</a></li>
-			  <li class="nav-item"><a href="profileCustomer.php" class="nav-link">Profile</a></li>
-	          <li class="nav-item cta"><a href="../../feliciano-master/reservation.html" class="nav-link">Book a table</a></li>
+	        	<li class="nav-item active"><a href="../../feliciano-master/index.html" class="nav-link">Home</a></li>
+	        	<li class="nav-item"><a href="../../feliciano-masterabout.html" class="nav-link">About</a></li>
+	        	<li class="nav-item"><a href="../../feliciano-mastermenu.html" class="nav-link">Menu</a></li>
+	          <li class="nav-item"><a href="../../feliciano-mastercontact.html" class="nav-link">Contact</a></li>
+			  <li class="nav-item"><a href="../mainMenu/customer/profileCustomer.php" class="nav-link">Profile</a></li>
+	          <li class="nav-item cta"><a href="reservation.html" class="nav-link">Book a table</a></li>
 	        </ul>
 	      </div>
 	    </div>
 	  </nav>
     <!-- END nav -->
     
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_3.jpg');" data-stellar-background-ratio="0.5">
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/img1.jpg');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-center">
@@ -142,12 +142,14 @@ $row=mysqli_fetch_assoc($qry);
         <div class="row mb-5">
           <div class="col-md-6 col-lg-3">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Feliciano</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <h2 class="ftco-heading-2">KFC Restaurant</h2>
+              <p>It was created for the purpose of bringing great tasting 
+						chicken to places where a KFC Restaurant might not be available. So, any offices or companies can hold functions 
+						at any place and anytime!</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                <li class="ftco-animate"><a href="https://twitter.com/kfc"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="https://www.instagram.com/kfc/"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="https://www.facebook.com/KFCMalaysia/"><span class="icon-instagram"></span></a></li>
               </ul>
             </div>
           </div>
@@ -155,13 +157,13 @@ $row=mysqli_fetch_assoc($qry);
             <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">Open Hours</h2>
               <ul class="list-unstyled open-hours">
-                <li class="d-flex"><span>Monday</span><span>9:00 - 24:00</span></li>
-                <li class="d-flex"><span>Tuesday</span><span>9:00 - 24:00</span></li>
-                <li class="d-flex"><span>Wednesday</span><span>9:00 - 24:00</span></li>
-                <li class="d-flex"><span>Thursday</span><span>9:00 - 24:00</span></li>
-                <li class="d-flex"><span>Friday</span><span>9:00 - 02:00</span></li>
-                <li class="d-flex"><span>Saturday</span><span>9:00 - 02:00</span></li>
-                <li class="d-flex"><span>Sunday</span><span> 9:00 - 02:00</span></li>
+                <li class="d-flex"><span>Monday</span><span>9:00AM - 10:00PM</span></li>
+                <li class="d-flex"><span>Tuesday</span><span>9:00AM - 10:00PM</span></li>
+                <li class="d-flex"><span>Wednesday</span><span>9:00AM - 10:00PM</span></li>
+                <li class="d-flex"><span>Thursday</span><span>9:00AM - 10:00PM</span></li>
+                <li class="d-flex"><span>Friday</span><span>9:00AM - 10:00PM</span></li>
+                <li class="d-flex"><span>Saturday</span><span>9:00AM - 10:00PM</span></li>
+                <li class="d-flex"><span>Sunday</span><span>9:00AM - 10:00PM</span></li>
               </ul>
             </div>
           </div>
@@ -169,33 +171,29 @@ $row=mysqli_fetch_assoc($qry);
              <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">Instagram</h2>
               <div class="thumb d-sm-flex">
-	            	<a href="#" class="thumb-menu img" style="background-image: url(images/insta-1.jpg);">
+	            	<a href="#" class="thumb-menu img" style="background-image: url(images/ista1.jpg);">
 	            	</a>
-	            	<a href="#" class="thumb-menu img" style="background-image: url(images/insta-2.jpg);">
+	            	<a href="#" class="thumb-menu img" style="background-image: url(images/insta2.jfif);">
 	            	</a>
-	            	<a href="#" class="thumb-menu img" style="background-image: url(images/insta-3.jpg);">
+	            	<a href="#" class="thumb-menu img" style="background-image: url(images/insta3.jpg);">
 	            	</a>
 	            </div>
 	            <div class="thumb d-flex">
-	            	<a href="#" class="thumb-menu img" style="background-image: url(images/insta-4.jpg);">
+	            	<a href="#" class="thumb-menu img" style="background-image: url(images/insta4.jfif);">
 	            	</a>
-	            	<a href="#" class="thumb-menu img" style="background-image: url(images/insta-5.jpg);">
+	            	<a href="#" class="thumb-menu img" style="background-image: url(images/insta5.jpg);">
 	            	</a>
-	            	<a href="#" class="thumb-menu img" style="background-image: url(images/insta-6.jpg);">
+	            	<a href="#" class="thumb-menu img" style="background-image: url(images/insta6.jpg);">
 	            	</a>
 	            </div>
             </div>
           </div>
           <div class="col-md-6 col-lg-3">
             <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2">Newsletter</h2>
-            	<p>Far far away, behind the word mountains, far from the countries.</p>
-              <form action="#" class="subscribe-form">
-                <div class="form-group">
-                  <input type="text" class="form-control mb-2 text-center" placeholder="Enter email address">
-                  <input type="submit" value="Subscribe" class="form-control submit px-3">
-                </div>
-              </form>
+            	<h2 class="ftco-heading-2">VISION</h2>
+            	<p>To sell food in fast, friendly and environment that appeals to pride conscious, health minded customer.</p>
+				<h2 class="ftco-heading-2">MISSION</h2>
+            	<p>To maximize profitbility, improve Shareholder value and deliver sustainable growth year after year.</p>
             </div>
           </div>
         </div>
