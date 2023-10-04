@@ -55,6 +55,10 @@ $row=mysqli_fetch_assoc($qry);
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
+							<a class="nav-link" href="../../startbootstrap-sb-admin-gh-pages/customerList/customerList-Staff.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Customer List
+							</a>
 						</div>	
 					</div>
 					<div class="sb-sidenav-footer">

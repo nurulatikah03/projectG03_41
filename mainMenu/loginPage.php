@@ -83,7 +83,7 @@ session_start();
 			}else if($userType=='STAFF'){
 				echo "<script>window.top.location='../startbootstrap-sb-admin-gh-pages/dashboardStaff.html'</script>";
 			}else{
-				echo "<script>window.top.location='../startbootstrap-sb-admin-gh-pages/homepage.html'</script>";
+				echo "<script>window.top.location='../feliciano-master'</script>";
 			}
 		}
 		else{

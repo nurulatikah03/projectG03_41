@@ -49,12 +49,15 @@ session_start();
                             <a class="nav-link" href="../dashboardAdmin.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
+							</a>
 							<a class="nav-link" href="../staffList/staffList.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Staff List
+							</a>
 							<a class="nav-link" href="customerList.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Customer List
+							</a>
 						</div>	
 					</div>
 					<div class="sb-sidenav-footer">
