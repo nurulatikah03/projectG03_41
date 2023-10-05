@@ -70,6 +70,7 @@ $row=mysqli_fetch_assoc($qry);
 	        	<li class="nav-item"><a href="../../feliciano-mastermenu.html" class="nav-link">Menu</a></li>
 	          <li class="nav-item"><a href="../../feliciano-mastercontact.html" class="nav-link">Contact</a></li>
 			  <li class="nav-item"><a href="../mainMenu/customer/profileCustomer.php" class="nav-link">Profile</a></li>
+			  <li class="nav-item"><a href="../../mainMenu/loginPage.php" class="nav-link">Logout</a></li>
 	          <li class="nav-item cta"><a href="reservation.html" class="nav-link">Book a table</a></li>
 	        </ul>
 	      </div>
