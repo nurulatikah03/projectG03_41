@@ -10,6 +10,11 @@ session_start();
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Login Page</title>
+		<style>body {
+            background-image: url('background.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }</style
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link href="css/styles.css" rel="stylesheet" />
 		<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
