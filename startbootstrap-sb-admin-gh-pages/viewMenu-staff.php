@@ -58,6 +58,10 @@ session_start();
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 View Menu
 							</a>
+							<a class="nav-link" href="../mainMenu/staff/viewFeedback-staff.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                View Feedback
+							</a>
 						</div>	
 					</div>
 					<div class="sb-sidenav-footer">

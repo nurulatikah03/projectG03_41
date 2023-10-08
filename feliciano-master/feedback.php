@@ -91,41 +91,41 @@
                     <span class="subheading">Share Your Feedback</span>
                     <h2 class="mb-4">Feedback Form</h2><br>
                 </div>
-                <form action="#">
+                <form action="processFeedback.php" method="POST">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="">Name</label>
-                                <input type="text" class="form-control" placeholder="Your Name">
+                                <input type="text" class="form-control" name="nameCustSendFeedback" placeholder="Your Name">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="">Email</label>
-                                <input type="text" class="form-control" placeholder="Your Email">
+                                <input type="email" class="form-control" name="emailCustSendFeedback" placeholder="Your Email">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="">Phone</label>
-                                <input type="text" class="form-control" placeholder="Phone">
+                                <input type="text" class="form-control" name="phoneCustSendFeedback" placeholder="Phone">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="">Time</label>
-                                <input type="text" class="form-control" id="book_time" placeholder="Time">
+                                <input type="text" class="form-control" name="timeSendFeedback" id="current_time" placeholder="Time">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="">Message Details</label>
-                                <textarea class="form-control" id="messageDetails" placeholder="Message subject" style="height: 200px; width: 100%;"></textarea>
+                                <textarea class="form-control" id="messageDetails" name="messageFeedback" placeholder="Message subject" style="height: 200px; width: 100%;"></textarea>
                             </div>
                         </div>
                         <div class="col-md-12 mt-3">
                             <div class="form-group text-center">
-                                <input type="submit" value="Submit" class="btn btn-primary py-3 px-5">
+                                <input type="submit" value="Submit" name="submitFeedbackBtn"class="btn btn-primary py-3 px-5">
                             </div>
                         </div>
                     </div>
@@ -230,6 +230,26 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
+  <script>
+  // Function to update the "book_time" input field with the current time
+  function setCurrentTime() {
+    const bookTimeInput = document.getElementById("current_time");
+    const currentTime = new Date();
+
+    // Format the current time as HH:MM AM/PM
+    const hours = currentTime.getHours();
+    const minutes = currentTime.getMinutes();
+    const ampm = hours >= 12 ? "PM" : "AM";
+
+    const formattedTime = `${hours % 12 || 12}:${minutes.toString().padStart(2, "0")} ${ampm}`;
+
+    // Set the value of the input field
+    bookTimeInput.value = formattedTime;
+  }
+
+  // Call the setCurrentTime function when the page loads
+  window.addEventListener("load", setCurrentTime);
+</script>
     
   </body>
 </html>

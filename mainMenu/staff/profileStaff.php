@@ -37,7 +37,7 @@ $row=mysqli_fetch_assoc($qry);
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="profileStaff.php">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
                         <li><hr class="dropdown-divider" /></li>
 						<li><a class="dropdown-item" href="changePassStaff.php">Change Password</a></li>
                         <li><hr class="dropdown-divider" /></li>
@@ -59,6 +59,14 @@ $row=mysqli_fetch_assoc($qry);
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Customer List
 							</a>
+							<a class="nav-link" href="../../startbootstrap-sb-admin-gh-pages/viewMenu-staff.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                View Menu
+                            </a>
+							<a class="nav-link" href="viewFeedback-staff.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                View Feedback
+                            </a>
 						</div>	
 					</div>
 					<div class="sb-sidenav-footer">

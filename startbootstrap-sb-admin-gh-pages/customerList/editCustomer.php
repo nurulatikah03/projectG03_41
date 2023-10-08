@@ -45,20 +45,6 @@ echo'
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="row mb-3">
-                                                <div class="col-md-6">
-                                                    <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputPassword" type="password" placeholder="Create a password" name="password" required/>
-                                                        <label for="inputPassword">Password</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputPasswordConfirm" type="password" placeholder="Confirm password" name="confirmPassword" required/>
-                                                        <label for="inputPasswordConfirm">Confirm Password</label>
-                                                    </div>
-                                                </div>
-                                            </div>
 											<div class="form-floating mb-3">
                                                 <input class="form-control" id="inputPhoneNum" type="text" placeholder="Phone Number" name="phoneNum" required/>
                                                 <label for="inputPhoneNum">Phone Number</label>
@@ -81,23 +67,17 @@ echo'
 ';
 
 if(isSet($_POST['editButton'])){
-	if($_POST['password']==$_POST['confirmPassword']){
-		editInfoCust();
-		echo "<script>window.top.location='customerList.php'</script>";
-	}else{
-		echo "<script>alert('Invalid Password')</script>";
-	}
+	editInfoCust();
+	echo "<script>window.top.location='customerList.php'</script>";
 	}
 	
 function editInfoCust(){
 	$customerEmailToEdit=$_SESSION['customerEmailToEdit'];
-	echo $staffEmailToEdit;
-	$password=$_POST['password'];
 	$firstName=$_POST['firstName'];
 	$lastName=$_POST['lastName'];
 	$phoneNum=$_POST['phoneNum'];
 	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
-	$sql = "update user_info SET password='".$password."', firstName='".$firstName."' ,lastName='".$lastName."',phoneNum='".$phoneNum."' WHERE email='".$customerEmailToEdit."'";
+	$sql = "update user_info SET firstName='".$firstName."' ,lastName='".$lastName."',phoneNum='".$phoneNum."' WHERE email='".$customerEmailToEdit."'";
 	mysqli_query($con,$sql);
 }
 ?>
