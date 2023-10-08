@@ -42,10 +42,10 @@ $row=mysqli_fetch_assoc($qry);
 		    		<div class="row d-flex">
 		    			<div class="col-md pr-4 d-flex topper align-items-center">
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
-						    <span class="text">+ 603-2602 1587</span>
+						    <span class="text">+603-2602 1587</span>
 					    </div>
 					    <div class="col-md pr-4 d-flex topper align-items-center">
-					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
+					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-envelope"></span></div>
 						    <span class="text">kfcresidencyutmkl@gmail.com</span>
 					    </div>
 					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right justify-content-end">
@@ -69,9 +69,9 @@ $row=mysqli_fetch_assoc($qry);
 	        	<li class="nav-item"><a href="../../feliciano-master/about.html" class="nav-link">About</a></li>
 	        	<li class="nav-item"><a href="../../feliciano-master/menu.php" class="nav-link">Menu</a></li>
 	          <li class="nav-item"><a href="../../feliciano-master/contact.html" class="nav-link">Contact</a></li>
-			  <li class="nav-item"><a href="../mainMenu/customer/profileCustomer.php" class="nav-link">Profile</a></li>
+			  <li class="nav-item"><a href="profileCustomer.php" class="nav-link">Profile</a></li>
 			  <li class="nav-item"><a href="../../mainMenu/loginPage.php" class="nav-link">Logout</a></li>
-	          <li class="nav-item cta"><a href="../../feliciano-master/reservation.html" class="nav-link">Book a table</a></li>
+	          <li class="nav-item cta"><a href="../../feliciano-master/feedback.php" class="nav-link">Share Your Feedback</a></li>
 	        </ul>
 	      </div>
 	    </div>
@@ -84,59 +84,61 @@ $row=mysqli_fetch_assoc($qry);
         <div class="row no-gutters slider-text align-items-end justify-content-center">
           <div class="col-md-9 ftco-animate text-center mb-4">
             <h1 class="mb-2 bread">Profile</h1>
+			<p class="breadcrumbs"><span class="mr-2"><a href="../../feliciano-master/index.html">Home <i class="ion-ios-arrow-forward"></i></a><span> Profile <i class="ion-ios-arrow-forward"></i></span></p>
           </div>
         </div>
       </div>
     </section>
 		
 		<section class="ftco-section ftco-no-pt ftco-no-pb">
-		<div class="container-fluid px-0">
-				<div class="row d-flex no-gutters">
-				<div class="col-md-6 order-md-last ftco-animate makereservation p-4 p-md-5 pt-5">
-				<div class="py-md-5">
-		<form action="#">
-	              <div class="row">
-	                <div class="col-md-6">
-	                  <div class="form-group">
-	                    <label for="">First Name</label>
-	                    <p class="text-muted mb-0"><?php echo $row['firstName']?></p><!--FirstName-->
-	                  </div>
-	                </div>
-	                <div class="col-md-6">
-	                  <div class="form-group">
-	                    <label for="">LastName</label>
-	                    <p class="text-muted mb-0"><?php echo $row['email']?></p><!--example@example.com-->
-	                  </div>
-	                </div>
-	                <div class="col-md-6">
-	                  <div class="form-group">
-	                    <label for="">Email</label>
-	                    <p class="text-muted mb-0"><?php echo $row['email']?></p><!--example@example.com-->
-	                  </div>
-	                </div>
-	                <div class="col-md-6">
-	                  <div class="form-group">
-	                    <label for="">Phone</label>
-	                    <p class="text-muted mb-0"><?php echo $row['phoneNum']?></p><!--8888888-->
-	                  </div>
-	                </div>
-	                <div class="col-md-12 mt-3">
-	                  <div class="form-group">
-	                    <input type="button" value="Edit Profile" class="btn btn-primary py-3 px-5" onclick="window.location.href='../editProfile.php';">
-	                  </div>
-					  </div>
-					 <div class="col-md-12 mt-3">
-	                  <div class="form-group">
-	                    <input type="button" value="Change Password" class="btn btn-primary py-3 px-5" onclick="window.location.href='changePassCustomer.php';">
-	                  </div>
-	                </div>
-	              </div>
-	            </form>
-				</div>
-				</div>
-			</div>
-		</div>
-		</section>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 ftco-animate makereservation p-4 p-md-5 pt-5">
+                <div class="py-md-5">
+				<h2 class="text-center"><b>Personal Information</b></h2><br><br>
+                    <form action="#">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" class="form-control" id="firstName" value="<?php echo $row['firstName']; ?>" disabled>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" class="form-control" id="lastName" value="<?php echo $row['lastName']; ?>" disabled>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" id="email" value="<?php echo $row['email']; ?>" disabled>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="phone">Phone</label>
+                                    <input type="text" class="form-control" id="phone" value="<?php echo $row['phoneNum']; ?>" disabled>
+                                </div>
+                            </div>
+                            <div class="col-md-12 mt-3">
+                                <div class="form-group text-center">
+                                    <input type="button" value="Edit Profile" class="btn btn-primary py-3 px-5" onclick="window.location.href='../editProfile.php';">
+                                </div>
+                            </div>
+                            <div class="col-md-12 mt-3">
+                                <div class="form-group text-center">
+                                    <input type="button" value="Change Password" class="btn btn-primary py-3 px-5" onclick="window.location.href='changePassCustomer.php';">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 		
     <footer class="ftco-footer ftco-bg-dark ftco-section">
       <div class="container">

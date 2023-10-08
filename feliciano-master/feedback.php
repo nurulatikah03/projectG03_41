@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Contact Us</title>
+    <title>Feliciano - Free Bootstrap 4 Template by Colorlib</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
-	<link href="css/styles.css" rel="stylesheet" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
@@ -28,27 +26,6 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-	<style>
-		iframe{
-				position:absolute;
-				text-align:center;
-				width:700px;
-				height:500px;
-			}
-			
-			.gmap_canvas{
-				overflow:hidden;
-				text-align:center;
-				width:600px;
-				height:400px;
-			}
-			
-			.gmap_iframe {
-				text-align:center;
-				width:800px!important;
-				height:600px!important;
-			}
-	</style>
   </head>
   <body>
     <div class="py-1 bg-black top">
@@ -58,10 +35,10 @@
 		    		<div class="row d-flex">
 		    			<div class="col-md pr-4 d-flex topper align-items-center">
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
-						    <span class="text">+ 603-2602 1587</span>
+						    <span class="text">+603-2602 1587</span>
 					    </div>
 					    <div class="col-md pr-4 d-flex topper align-items-center">
-					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
+					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-envelope"></span></div>
 						    <span class="text">kfcresidencyutmkl@gmail.com</span>
 					    </div>
 					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right justify-content-end">
@@ -99,55 +76,66 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-center">
           <div class="col-md-9 ftco-animate text-center mb-4">
-            <h1 class="mb-2 bread">Contact</h1>
-            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Contact us <i class="ion-ios-arrow-forward"></i></span></p>
+            <h1 class="mb-2 bread">Feedback Form</h1>
+            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span><span> Feedback <i class="ion-ios-arrow-forward"></i></span></p>
           </div>
         </div>
       </div>
     </section>
 	
-		<br><br><b><br>
-		<section class="ftco-section ftco-no-pt ftco-no-pb contact-section">
-			<div class="container">
-				<div class="container-fluid px-4">
-					<div class="mapouter">
-						<div class="gmap_canvas">
-							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.705095857183!2d101.71970647581325!3d3.1721353530091796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc376f6af06fff%3A0xd68f5fcabfc16f94!2sKFC%20Gurney%20Mall!5e0!3m2!1sen!2smy!4v1694249679945!5m2!1sen!2smy" style="border:0;"></iframe>
-						</div>
-					</div>
-				</div>
-				<div class="container-fluid px-4">
-					<div id="map"></div>
-				</div>
-			</div>
-		</section>
-		<section class="ftco-section contact-section">
-      <div class="container text-center">
-        <div class="row d-flex contact-info">
-          <div class="col-md-12 mb-4">
-            <h2 class="h2 font-weight-bold"><br><br><br>Contact Information</h2>
-          </div>
-          <div class="container text-center">
-					<h4>
-						<i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i>
-						Gurney Mall, 8, Jln Maktab,<br>&nbsp;&nbsp;&nbsp;
-						Kampung Datuk Keramat, 54000<br>&nbsp;&nbsp;&nbsp;
-						Kuala Lumpur, Federal Territory of<br>&nbsp;&nbsp;&nbsp;
-						Kuala Lumpur<br><br>
-					</h4>
-		
-					<h4>
-						<i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> 
-						+603-2602 1587<br><br>
-					</h4>
-		
-					<h4>
-						<i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> 
-						kfcresidencyutmkl@gmail.com
-					</h4><br><br>
+		<section class="ftco-section img">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-7 ftco-animate makereservation p-4 px-md-5 pb-md-5">
+                <div class="heading-section ftco-animate mb-5 text-center">
+                    <span class="subheading">Share Your Feedback</span>
+                    <h2 class="mb-4">Feedback Form</h2><br>
+                </div>
+                <form action="#">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Name</label>
+                                <input type="text" class="form-control" placeholder="Your Name">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Email</label>
+                                <input type="text" class="form-control" placeholder="Your Email">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Phone</label>
+                                <input type="text" class="form-control" placeholder="Phone">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Time</label>
+                                <input type="text" class="form-control" id="book_time" placeholder="Time">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Message Details</label>
+                                <textarea class="form-control" id="messageDetails" placeholder="Message subject" style="height: 200px; width: 100%;"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-12 mt-3">
+                            <div class="form-group text-center">
+                                <input type="submit" value="Submit" class="btn btn-primary py-3 px-5">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
+
+
 		
     <footer class="ftco-footer ftco-bg-dark ftco-section">
       <div class="container">
@@ -239,7 +227,7 @@
   <script src="js/bootstrap-datepicker.js"></script>
   <script src="js/jquery.timepicker.min.js"></script>
   <script src="js/scrollax.min.js"></script>
-  <script src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.705095857183!2d101.71970647581325!3d3.1721353530091796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc376f6af06fff%3A0xd68f5fcabfc16f94!2sKFC%20Gurney%20Mall!5e0!3m2!1sen!2smy!4v1694249679945!5m2!1sen!2smy"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
     
