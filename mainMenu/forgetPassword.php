@@ -13,7 +13,7 @@ include "processOTP.php";
         <title>Password Reset - Customer</title>
         <link href="css/styles.css" rel="stylesheet" />
 		<style>body {
-            background-image: url('background.png');
+            background-image: url('background.jpg');
             background-size: cover;
             background-repeat: no-repeat;
         }</style

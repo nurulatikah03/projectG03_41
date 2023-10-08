@@ -11,13 +11,11 @@ session_start();
     <meta name="author" content="">
     <title>Edit Profile</title>
     <link href="css/styles.css" rel="stylesheet">
-    <style>
-        body {
-            background-image: url("background.png");
+    <style>body {
+            background-image: url('background.jpg');
             background-size: cover;
             background-repeat: no-repeat;
-        }
-    </style>
+        }</style
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 <body class="bg-primary">
@@ -34,15 +32,15 @@ session_start();
                                 <div class="card-body">
                                     <form action="" method="POST">
                                         <div class="mb-3">
-                                            <label for="newFirstName" class="form-label">New First Name</label>
+                                            <label for="newFirstName" class="form-label">First Name</label>
                                             <input type="text" class="form-control" id="newFirstName" name="newFirstName" required>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="newLastName" class="form-label">New Last Name</label>
+                                            <label for="newLastName" class="form-label">Last Name</label>
                                             <input type="text" class="form-control" id="newLastName" name="newLastName" required>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="newPhoneNum" class="form-label">New Phone Number</label>
+                                            <label for="newPhoneNum" class="form-label">Phone Number</label>
                                             <input type="text" class="form-control" id="newPhoneNum" name="newPhoneNum" required>
                                         </div>
                                         <div class="d-grid">

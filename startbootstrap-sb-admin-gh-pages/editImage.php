@@ -13,73 +13,11 @@ $_SESSION['dishNameToEdit'];
     <title>Edit Menu</title>
     <link href="css/styles.css" rel="stylesheet">
     <link href="https://use.fontawesome.com/releases/v6.3.0/css/all.css" rel="stylesheet">
-    <style>
-        body {
-    background-image: url('img1.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative; /* Position is set to relative for stacking order */
-}
-
-body::before {
-    content: '';
-    background-image: inherit; /* Use the same background image as the body */
-    filter: blur(5px); /* Adjust the blur intensity as needed */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Ensure it's behind the content */
-}
-        .card {
-            background-color: rgba(255, 255, 255, 0.8);
-            border: none;
-        }
-
-        .card-header {
-            background-color: #D60000; /* KFC red */
-            color: white;
-        }
-
-        .form-control {
-            border: 1px solid #D60000;
-        }
-
-        .form-control:focus {
-            border-color: #D60000;
-        }
-
-        .btn-dark {
-            background-color: #D60000;
-            border-color: #D60000;
-        }
-
-        .btn-dark:hover {
-            background-color: #B50000; /* Slightly darker red on hover */
-            border-color: #B50000;
-        }
-
-        label {
-            color: #D60000;
-        }
-
-        a {
-            color: #D60000;
-        }
-		.custom-select {
-			border: 1px solid #D60000; 
-			color: #D60000; 
-			background-color: white; 
-			padding: 10px; 
-			border-radius: 4px; 
-		}
-
-		.custom-select:focus {
-			border-color: #D60000; /* Red border color on focus */
-			outline: none; /* Remove the default focus outline */
-		}
-    </style>
+    <style>body {
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }</style
 </head>
 <body>
 <div id="layoutAuthentication">

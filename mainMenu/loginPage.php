@@ -11,7 +11,7 @@ session_start();
         <meta name="author" content="" />
         <title>Login Page</title>
 		<style>body {
-            background-image: url('background.png');
+            background-image: url('background.jpg');
             background-size: cover;
             background-repeat: no-repeat;
         }</style

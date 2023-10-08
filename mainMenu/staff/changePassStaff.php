@@ -12,7 +12,7 @@ session_start();
         <title>Change Password - Staff</title>
         <link href="css/styles.css" rel="stylesheet" />
 		<style>body {
-            background-image: url('background.png');
+            background-image: url('background.jpg');
             background-size: cover;
             background-repeat: no-repeat;
         }</style
@@ -44,15 +44,6 @@ session_start();
                         </div>
                     </div>
                 </main>
-            </div>
-            <div id="layoutAuthentication_footer">
-                <footer class="py-4 bg-light mt-auto">
-                    <div class="container-fluid px-4">
-                        <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2023</div>
-                        </div>
-                    </div>
-                </footer>
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
