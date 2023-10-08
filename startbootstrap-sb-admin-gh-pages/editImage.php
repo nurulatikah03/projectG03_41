@@ -15,11 +15,23 @@ $_SESSION['dishNameToEdit'];
     <link href="https://use.fontawesome.com/releases/v6.3.0/css/all.css" rel="stylesheet">
     <style>
         body {
-            background-image: url('background.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
+    background-image: url('img1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative; /* Position is set to relative for stacking order */
+}
 
+body::before {
+    content: '';
+    background-image: inherit; /* Use the same background image as the body */
+    filter: blur(5px); /* Adjust the blur intensity as needed */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure it's behind the content */
+}
         .card {
             background-color: rgba(255, 255, 255, 0.8);
             border: none;
@@ -97,11 +109,14 @@ $_SESSION['dishNameToEdit'];
 									<div class="form-floating mb-3">
 										<select class="form-select custom-select" id="dishType" name="dishType" required>
 											<option value="" disabled selected>Dish Type</option>
-											<option>Nasi Lemak KFC</option>
+											<option>Family Buckets</option>
 											<option>Box Meals</option>
-											<option>Value Combo</option>
-											<option>A la Carte</option>
+											<option>Chicken</option>
+											<option>Kids Meals</option>
+											<option>Add-on Sides</option>
 											<option>Beverages</option>
+											<option>Burgers & Twister</option>
+											<option>Nuggets & Tenders</option>
 										</select>
 									</div>
 									<div class="form-floating mb-3">

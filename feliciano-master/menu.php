@@ -35,10 +35,10 @@
 		    		<div class="row d-flex">
 		    			<div class="col-md pr-4 d-flex topper align-items-center">
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
-						    <span class="text">+ 603-2602 1587</span>
+						    <span class="text">+603-2602 1587</span>
 					    </div>
 					    <div class="col-md pr-4 d-flex topper align-items-center">
-					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
+					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-envelope"></span></div>
 						    <span class="text">kfcresidencyutmkl@gmail.com</span>
 					    </div>
 					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right justify-content-end">
@@ -60,11 +60,11 @@
 	        <ul class="navbar-nav ml-auto">
 	        	<li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
 	        	<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-	        	<li class="nav-item"><a href="#" class="nav-link">Menu</a></li>
+	        	<li class="nav-item"><a href="menu.php" class="nav-link">Menu</a></li>
 	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
 			  <li class="nav-item"><a href="../mainMenu/customer/profileCustomer.php" class="nav-link">Profile</a></li>
 			  <li class="nav-item"><a href="../mainMenu/loginPage.php" class="nav-link">Logout</a></li>
-	          <li class="nav-item cta"><a href="reservation.html" class="nav-link">Book a table</a></li>
+	          <li class="nav-item cta"><a href="feedback.php" class="nav-link">Share Your Feedback</a></li>
 	        </ul>
 	      </div>
 	    </div>
@@ -76,8 +76,8 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-center">
           <div class="col-md-9 ftco-animate text-center mb-4">
-            <h1 class="mb-2 bread">Specialties</h1>
-            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Menu <i class="ion-ios-arrow-forward"></i></span></p>
+            <h1 class="mb-2 bread">Menu</h1>
+            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span><span>Menu <i class="ion-ios-arrow-forward"></i></span></p>
           </div>
         </div>
       </div>
@@ -90,15 +90,21 @@
 					<div class="row">
             <div class="col-md-12 nav-link-wrap">
 	            <div class="nav nav-pills d-flex text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-	              <a class="nav-link ftco-animate active" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Nasi Lemak KFC</a>
+	              <a class="nav-link ftco-animate active" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Family Buckets</a>
 
-	              <a class="nav-link ftco-animate" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Value Combos</a>
+	              <a class="nav-link ftco-animate" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Box Meals</a>
 
-	              <a class="nav-link ftco-animate" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">A La Carte</a>
+	              <a class="nav-link ftco-animate" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">Chicken</a>
+				  
+				  <a class="nav-link ftco-animate" id="v-pills-4-tab" data-toggle="pill" href="#v-pills-4" role="tab" aria-controls="v-pills-4" aria-selected="false">Kids Meals</a>
+				  
+				  <a class="nav-link ftco-animate" id="v-pills-5-tab" data-toggle="pill" href="#v-pills-5" role="tab" aria-controls="v-pills-5" aria-selected="false">Add-on Sides</a>
 
-	              <a class="nav-link ftco-animate" id="v-pills-4-tab" data-toggle="pill" href="#v-pills-4" role="tab" aria-controls="v-pills-4" aria-selected="false">Beverages</a>
+	              <a class="nav-link ftco-animate" id="v-pills-6-tab" data-toggle="pill" href="#v-pills-6" role="tab" aria-controls="v-pills-6" aria-selected="false">Beverages</a>
 
-	              <a class="nav-link ftco-animate" id="v-pills-5-tab" data-toggle="pill" href="#v-pills-5" role="tab" aria-controls="v-pills-5" aria-selected="false">Box Meals</a>
+	              <a class="nav-link ftco-animate" id="v-pills-7-tab" data-toggle="pill" href="#v-pills-7" role="tab" aria-controls="v-pills-7" aria-selected="false">Burgers & Twister</a>
+				  
+				  <a class="nav-link ftco-animate" id="v-pills-8-tab" data-toggle="pill" href="#v-pills-8" role="tab" aria-controls="v-pills-8" aria-selected="false">Nuggets & Tender</a>
 
 	            </div>
 	          </div>
@@ -109,7 +115,7 @@
 	              <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="day-1-tab"><!--Nasi Lemak KFC-->
 				  <div class="row no-gutters d-flex align-items-stretch">
 				 <?php
-					$selectedDishType="Nasi Lemak KFC";
+					$selectedDishType="Family Buckets";
 					$qry=getListFromDishType($selectedDishType);
 					while($row=mysqli_fetch_assoc($qry)){
 						$imageURL = '../startbootstrap-sb-admin-gh-pages/uploads/'.$row["image_path"];
@@ -143,7 +149,7 @@
 	              <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-day-2-tab">
 	              	<div class="row no-gutters d-flex align-items-stretch">
 					<?php
-					$selectedDishType="Value Combo";
+					$selectedDishType="Box Meals";
 					$qry=getListFromDishType($selectedDishType);
 					while($row=mysqli_fetch_assoc($qry)){
 						$imageURL = '../startbootstrap-sb-admin-gh-pages/uploads/'.$row["image_path"];
@@ -176,7 +182,7 @@
 	              <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-day-3-tab">
 	              	<div class="row no-gutters d-flex align-items-stretch">
 					<?php
-					$selectedDishType="A la Carte";
+					$selectedDishType="Chicken";
 					$qry=getListFromDishType($selectedDishType);
 					while($row=mysqli_fetch_assoc($qry)){
 						$imageURL = '../startbootstrap-sb-admin-gh-pages/uploads/'.$row["image_path"];
@@ -209,7 +215,7 @@
 	              <div class="tab-pane fade" id="v-pills-4" role="tabpanel" aria-labelledby="v-pills-day-4-tab">
 	              	<div class="row no-gutters d-flex align-items-stretch">
 					<?php
-					$selectedDishType="Beverages";
+					$selectedDishType="Kids Meals";
 					$qry=getListFromDishType($selectedDishType);
 					while($row=mysqli_fetch_assoc($qry)){
 						$imageURL = '../startbootstrap-sb-admin-gh-pages/uploads/'.$row["image_path"];
@@ -242,7 +248,106 @@
 	              <div class="tab-pane fade" id="v-pills-5" role="tabpanel" aria-labelledby="v-pills-day-5-tab">
 	              	<div class="row no-gutters d-flex align-items-stretch">
 					<?php
-					$selectedDishType="Box Meals";
+					$selectedDishType="Add-on Sides";
+					$qry=getListFromDishType($selectedDishType);
+					while($row=mysqli_fetch_assoc($qry)){
+						$imageURL = '../startbootstrap-sb-admin-gh-pages/uploads/'.$row["image_path"];
+						echo '
+						<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
+					        	<div class="menus d-sm-flex ftco-animate align-items-stretch">
+					              <div class="menu-img img" style="background-image: url('.$imageURL.');"></div>
+					              <div class="text d-flex align-items-center">
+													<div>
+						              	<div class="d-flex">
+							                <div class="one-half">
+							                  <h3>'.$row["nameDish"].'</h3>
+							                </div>
+							                <div class="one-forth">
+							                  <span class="price">RM '.$row["dishPrice"].'</span>
+							                </div>
+							              </div>
+							              <p><span>'.$row["aboutDish"].'</span></p>
+							              <p><a href="#" class="btn btn-primary">Order now</a></p>
+						              </div>
+					              </div>
+					            </div>
+					        	</div>
+						';
+					}
+					?>  
+					</div>
+	              </div>
+					
+					<div class="tab-pane fade" id="v-pills-6" role="tabpanel" aria-labelledby="v-pills-day-6-tab">
+	              	<div class="row no-gutters d-flex align-items-stretch">
+					<?php
+					$selectedDishType="Beverages";
+					$qry=getListFromDishType($selectedDishType);
+					while($row=mysqli_fetch_assoc($qry)){
+						$imageURL = '../startbootstrap-sb-admin-gh-pages/uploads/'.$row["image_path"];
+						echo '
+						<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
+					        	<div class="menus d-sm-flex ftco-animate align-items-stretch">
+					              <div class="menu-img img" style="background-image: url('.$imageURL.');"></div>
+					              <div class="text d-flex align-items-center">
+													<div>
+						              	<div class="d-flex">
+							                <div class="one-half">
+							                  <h3>'.$row["nameDish"].'</h3>
+							                </div>
+							                <div class="one-forth">
+							                  <span class="price">RM '.$row["dishPrice"].'</span>
+							                </div>
+							              </div>
+							              <p><span>'.$row["aboutDish"].'</span></p>
+							              <p><a href="#" class="btn btn-primary">Order now</a></p>
+						              </div>
+					              </div>
+					            </div>
+					        	</div>
+						';
+					}
+					?>  
+					</div>
+	              </div>
+					
+					<div class="tab-pane fade" id="v-pills-7" role="tabpanel" aria-labelledby="v-pills-day-7-tab">
+	              	<div class="row no-gutters d-flex align-items-stretch">
+					<?php
+					$selectedDishType="Burgers & Twister";
+					$qry=getListFromDishType($selectedDishType);
+					while($row=mysqli_fetch_assoc($qry)){
+						$imageURL = '../startbootstrap-sb-admin-gh-pages/uploads/'.$row["image_path"];
+						echo '
+						<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
+					        	<div class="menus d-sm-flex ftco-animate align-items-stretch">
+					              <div class="menu-img img" style="background-image: url('.$imageURL.');"></div>
+					              <div class="text d-flex align-items-center">
+													<div>
+						              	<div class="d-flex">
+							                <div class="one-half">
+							                  <h3>'.$row["nameDish"].'</h3>
+							                </div>
+							                <div class="one-forth">
+							                  <span class="price">RM '.$row["dishPrice"].'</span>
+							                </div>
+							              </div>
+							              <p><span>'.$row["aboutDish"].'</span></p>
+							              <p><a href="#" class="btn btn-primary">Order now</a></p>
+						              </div>
+					              </div>
+					            </div>
+					        	</div>
+						';
+					}
+					?>  
+					</div>
+	              </div>
+					
+					<div class="tab-pane fade" id="v-pills-8" role="tabpanel" aria-labelledby="v-pills-day-8-tab">
+	              	<div class="row no-gutters d-flex align-items-stretch">
+					<?php
+					$selectedDishType="Nuggets & Tenders";
 					$qry=getListFromDishType($selectedDishType);
 					while($row=mysqli_fetch_assoc($qry)){
 						$imageURL = '../startbootstrap-sb-admin-gh-pages/uploads/'.$row["image_path"];

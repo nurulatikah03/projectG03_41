@@ -97,11 +97,14 @@ session_start();
 									<div class="mb-3">
 										<label for="dishType" class="form-label">Dish Type:</label>
 										<select class="form-select" id="dishType" name="dishType" required>
-											<option>Nasi Lemak KFC</option>
+											<option>Family Buckets</option>
 											<option>Box Meals</option>
-											<option>Value Combo</option>
-											<option>A la Carte</option>
+											<option>Chicken</option>
+											<option>Kids Meals</option>
+											<option>Add-on Sides</option>
 											<option>Beverages</option>
+											<option>Burgers & Twister</option>
+											<option>Nuggets & Tenders</option>
 										</select>
 									</div>
 

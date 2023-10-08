@@ -71,7 +71,7 @@ session_start();
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Menu List</h1>
                         <ol class="breadcrumb mb-4">
-                            <form action="uploadImage.php" method="POST" enctype="multipart/form-data">
+							<form action="uploadImage.php" method="POST" enctype="multipart/form-data">
 								<fieldset>
 									<legend>Upload Menu Item</legend>
 									
@@ -93,11 +93,14 @@ session_start();
 									<div class="mb-3">
 										<label for="dishType" class="form-label">Dish Type:</label>
 										<select class="form-select" id="dishType" name="dishType" required>
-											<option>Nasi Lemak KFC</option>
+											<option>Family Buckets</option>
 											<option>Box Meals</option>
-											<option>Value Combo</option>
-											<option>A la Carte</option>
+											<option>Chicken</option>
+											<option>Kids Meals</option>
+											<option>Add-on Sides</option>
 											<option>Beverages</option>
+											<option>Burgers & Twister</option>
+											<option>Nuggets & Tenders</option>
 										</select>
 									</div>
 
@@ -106,9 +109,10 @@ session_start();
 										<input type="text" class="form-control" id="aboutDish" name="aboutDish" placeholder="About Dish" required>
 									</div>
 
-									<button type="submit" class="btn btn-primary" name="submit_staff">Upload</button>
+									<button type="submit" class="btn btn-primary" name="submit_admin">Upload</button>
 								</fieldset>
 							</form>
+
                         </ol>
 						<table class="table">
 							<thead>
@@ -155,7 +159,6 @@ session_start();
 							}
 						?>
 						</table>
-                        
                 </main>
 					</div>
 			</div>
