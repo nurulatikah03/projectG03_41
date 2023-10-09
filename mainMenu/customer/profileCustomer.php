@@ -66,7 +66,6 @@ $row=mysqli_fetch_assoc($qry);
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
 	        	<li class="nav-item active"><a href="../../feliciano-master/index.html" class="nav-link">Home</a></li>
-	        	<li class="nav-item"><a href="../../feliciano-master/about.html" class="nav-link">About</a></li>
 	        	<li class="nav-item"><a href="../../feliciano-master/menu.php" class="nav-link">Menu</a></li>
 	          <li class="nav-item"><a href="../../feliciano-master/contact.html" class="nav-link">Contact</a></li>
 			  <li class="nav-item"><a href="profileCustomer.php" class="nav-link">Profile</a></li>
