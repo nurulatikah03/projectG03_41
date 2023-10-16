@@ -16,7 +16,7 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="profileAdmin.php">KFC&nbsp;<i class="fas fa-drumstick-bite"></i></a>
+            <a class="navbar-brand ps-3" href="profileAdmin.php">KFC&nbsp;</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -45,24 +45,29 @@
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
+						<div class="sb-sidenav-menu-heading">Core</div>
                             <a class="nav-link" href="../../startbootstrap-sb-admin-gh-pages/dashboardAdmin.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
+							<div class="sb-sidenav-menu-heading">Staff</div>
 							<a class="nav-link" href="../../startbootstrap-sb-admin-gh-pages/staffList/staffList.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                                 Staff List
 							</a>
+							<div class="sb-sidenav-menu-heading">Customer</div>
 							<a class="nav-link" href="../../startbootstrap-sb-admin-gh-pages/customerList/customerList.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fas fa-bookmark"></i></div>
                                 Customer List
 							</a>
+							<div class="sb-sidenav-menu-heading">Menu</div>
 							<a class="nav-link" href="../../startbootstrap-sb-admin-gh-pages/viewMenu-admin.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fas fa-cutlery"></i></div>
                                 View Menu
 							</a>
+							<div class="sb-sidenav-menu-heading">Feedback</div>
 							<a class="nav-link" href="#">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fas fa-thumbs-up"></i></div>
                                 View Feedback
 							</a>
 						</div>	
