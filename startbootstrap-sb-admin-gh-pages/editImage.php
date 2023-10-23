@@ -1,6 +1,8 @@
 <?php
 session_start();
 $_SESSION['dishNameToEdit'];
+$qry=getEditingDishInfo();
+$row=mysqli_fetch_assoc($qry);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,26 +29,26 @@ $_SESSION['dishNameToEdit'];
                 <div class="row justify-content-center">
                     <div class="col-lg-7">
                         <div class="card shadow-lg border-0 rounded-lg mt-5">
-                            <div class="card-header"><h3 class="text-center font-weight-light my-4">Edit Menu</h3></div>
+                            <div class="card-header"><h3 class="text-center font-weight-light my-4">Edit Menu <br> Prod_ID : <?php echo $row['id']; ?></h3></div>
                             <div class="card-body">
                                 <form action="" method="POST">
                                     <div class="row mb-3">
 										<div class="col-md-6">
 											<div class="form-floating mb-3 mb-md-0">
-												<input class="form-control" id="inputNameDish" type="text" placeholder="" name="nameDish" required/>
+												<input class="form-control" id="inputNameDish" type="text" placeholder="" name="nameDish" value="<?php echo $row['nameDish']; ?>"required/>
 												<label for="inputNameDish">Name Of Dish</label>
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-floating">
-												<input class="form-control" id="inputDishPrice" type="number" placeholder="" name="dishPrice" required/>
+												<input class="form-control" id="inputDishPrice" type="number" placeholder="" name="dishPrice" value="<?php echo $row['dishPrice']; ?>" required/>
 												<label for="inputDishPrice">Price</label>
 											</div>											
 										</div>
 									</div>
 									<div class="form-floating mb-3">
-										<select class="form-select custom-select" id="dishType" name="dishType" required>
-											<option value="" disabled selected>Dish Type</option>
+										<select class="form-select custom-select" id="dishType" name="dishType">
+											<option value="<?php echo $row['dishType'];?>" selected><?php echo $row['dishType']; ?></option>
 											<option>Family Buckets</option>
 											<option>Box Meals</option>
 											<option>Chicken</option>
@@ -56,9 +58,10 @@ $_SESSION['dishNameToEdit'];
 											<option>Burgers & Twister</option>
 											<option>Nuggets & Tenders</option>
 										</select>
+										<label for="dishType">Dish Type</label>
 									</div>
 									<div class="form-floating mb-3">
-										<input class="form-control" id="inputAboutDish" type="text" placeholder="" name="aboutDish" required/>
+										<input class="form-control" id="inputAboutDish" type="text" placeholder="" name="aboutDish" value="<?php echo $row['aboutDish']; ?>" required/>
 											<label for="inputAboutDish">About Dish</label>
 									</div>
 									<div class="mt-4 mb-0">
@@ -105,6 +108,14 @@ function editInfoMenu(){
 	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
 	$sql = "update menu SET nameDish='".$nameDish."', dishPrice='".$dishPrice."' ,dishType='".$dishType."',aboutDish='".$aboutDish."' WHERE nameDish='".$dishNameToEdit."'";
 	mysqli_query($con,$sql);
+}
+
+function getEditingDishInfo(){
+	$dishNameToEdit=$_SESSION['dishNameToEdit'];
+	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+	$sql = "SELECT * FROM menu WHERE nameDish='".$dishNameToEdit."'";
+	$query=mysqli_query($con,$sql);
+	return $query;
 }
 
 ?>

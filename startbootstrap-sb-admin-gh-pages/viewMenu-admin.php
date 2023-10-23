@@ -130,6 +130,7 @@ session_start();
 						<table class="table">
 							<thead>
 								<tr class="table-primary">
+									<th style="text-align: center;">Prod_ID</th>
 									<th style="text-align: center;">Dish Name</th>
 									<th style="text-align: center;">Price</th>
 									<th style="text-align: center;">Type</th>
@@ -146,6 +147,7 @@ session_start();
 							echo "
 							<tbody>
 								<tr>
+									<td style='text-align: center;'>".$row['id']."</td>
 									<td style='text-align: center;'>".$row['nameDish']."</td>
 									<td style='text-align: center;'> RM ".$row['dishPrice']."</td>
 									<td style='text-align: center;'>".$row['dishType']."</td>
@@ -197,7 +199,7 @@ if(isSet($_POST['deleteDishButton'])){
 }
 function getListOfImage(){
 	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
-	$sql = "SELECT * FROM menu ORDER BY dishType";
+	$sql = "SELECT * FROM menu ORDER BY id";
 	$query = mysqli_query($con,$sql);
 	return $query;
 }
