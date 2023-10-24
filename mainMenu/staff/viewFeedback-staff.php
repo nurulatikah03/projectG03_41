@@ -81,6 +81,7 @@
                             <table class="table">
 							<thead>
 								<tr class="table-primary">
+									<th>Feedback ID</th>
 									<th>Name</th>
 									<th>Email</th>
 									<th>Phone</th>
@@ -94,6 +95,7 @@
 							echo "
 							<tbody>
 								<tr>
+									<td>".$row['feedback_id']."</td>
 									<td>".$row['name']."</td>
 									<td>".$row['email']."</td>
 									<td>".$row['phone']."</td>

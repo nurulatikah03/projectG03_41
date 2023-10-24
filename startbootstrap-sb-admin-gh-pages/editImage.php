@@ -29,8 +29,9 @@ $row=mysqli_fetch_assoc($qry);
                 <div class="row justify-content-center">
                     <div class="col-lg-7">
                         <div class="card shadow-lg border-0 rounded-lg mt-5">
-                            <div class="card-header"><h3 class="text-center font-weight-light my-4">Edit Menu <br> Prod_ID : <?php echo $row['id']; ?></h3></div>
+                            <div class="card-header"><h3 class="text-center font-weight-light my-4">Edit Menu</h3></div>
                             <div class="card-body">
+							<b>Prod_ID : <?php echo $row['id']; ?></b>
                                 <form action="" method="POST">
                                     <div class="row mb-3">
 										<div class="col-md-6">

@@ -82,6 +82,7 @@ session_start();
                             <table class="table">
 							<thead>
 								<tr class="table-primary">
+									<th>User ID</th>
 									<th>Email</th>
 									<th>First Name</th>
 									<th>Last Name</th>
@@ -94,6 +95,7 @@ session_start();
 							echo "
 							<tbody>
 								<tr>
+									<td>".$row['user_id']."</td>
 									<td>".$row['email']."</td>
 									<td>".$row['firstName']."</td>
 									<td>".$row['lastName']."</td>
