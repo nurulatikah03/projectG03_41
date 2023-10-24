@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+  
+  <style>
+		.icon-shopping-cart {
+			color: #FFFFFF;
+		font-size: 20px}
+	
+  </style>		
     <title>Menu</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -27,6 +34,7 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
+  
   <body>
     <div class="py-1 bg-black top">
     	<div class="container">
@@ -57,13 +65,19 @@
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav ml-auto">
+			<ul class="navbar-nav ml-auto">
 	        	<li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
 	        	<li class="nav-item"><a href="menu.php" class="nav-link">Menu</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-			  <li class="nav-item"><a href="../mainMenu/customer/profileCustomer.php" class="nav-link">Profile</a></li>
-			  <li class="nav-item"><a href="../mainMenu/loginPage.php" class="nav-link">Logout</a></li>
-	          <li class="nav-item cta"><a href="feedback.php" class="nav-link">Share Your Feedback</a></li>
+				<li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+				<li class="nav-item"><a href="../mainMenu/customer/profileCustomer.php" class="nav-link">Profile</a></li>
+				<li class="nav-item"><a href="../mainMenu/loginPage.php" class="nav-link">Logout</a></li>
+				<li class="nav-item cta"><a href="feedback.php" class="nav-link">Share Your Feedback</a></li>
+		<div class="sidenav">
+			<ul style="list-style-type: none; padding: 0;">
+				<li class="nav-item"><a href="orderList.php" class="nav-link"><span class="icon-shopping-cart"></span></a></li>
+			</ul>
+		</div>  
+			</ul>
 	        </ul>
 	      </div>
 	    </div>
@@ -133,7 +147,7 @@
 							                </div>
 							              </div>
 							              <p><span>'.$row["aboutDish"].'</span></p>
-							              <p><a href="#" class="btn btn-primary">Order now</a></p>
+							              <p><a href="OrderList.php" class="btn btn-primary">Order now</a></p>
 						              </div>
 					              </div>
 					            </div>
@@ -167,7 +181,7 @@
 							                </div>
 							              </div>
 							              <p><span>'.$row["aboutDish"].'</span></p>
-							              <p><a href="#" class="btn btn-primary">Order now</a></p>
+							              <p><a href="OrderList.php" class="btn btn-primary">Order now</a></p>
 						              </div>
 					              </div>
 					            </div>
@@ -200,7 +214,7 @@
 							                </div>
 							              </div>
 							              <p><span>'.$row["aboutDish"].'</span></p>
-							              <p><a href="#" class="btn btn-primary">Order now</a></p>
+							              <p><a href="OrderList.php" class="btn btn-primary">Order now</a></p>
 						              </div>
 					              </div>
 					            </div>
@@ -233,7 +247,7 @@
 							                </div>
 							              </div>
 							              <p><span>'.$row["aboutDish"].'</span></p>
-							              <p><a href="#" class="btn btn-primary">Order now</a></p>
+							              <p><a href="OrderList.php" class="btn btn-primary">Order now</a></p>
 						              </div>
 					              </div>
 					            </div>
@@ -266,7 +280,7 @@
 							                </div>
 							              </div>
 							              <p><span>'.$row["aboutDish"].'</span></p>
-							              <p><a href="#" class="btn btn-primary">Order now</a></p>
+							              <p><a href="OrderList.php" class="btn btn-primary">Order now</a></p>
 						              </div>
 					              </div>
 					            </div>
@@ -299,7 +313,7 @@
 							                </div>
 							              </div>
 							              <p><span>'.$row["aboutDish"].'</span></p>
-							              <p><a href="#" class="btn btn-primary">Order now</a></p>
+							              <p><a href="OrderList.php" class="btn btn-primary">Order now</a></p>
 						              </div>
 					              </div>
 					            </div>
@@ -332,7 +346,7 @@
 							                </div>
 							              </div>
 							              <p><span>'.$row["aboutDish"].'</span></p>
-							              <p><a href="#" class="btn btn-primary">Order now</a></p>
+							              <p><a href="OrderList.php" class="btn btn-primary">Order now</a></p>
 						              </div>
 					              </div>
 					            </div>
@@ -365,7 +379,7 @@
 							                </div>
 							              </div>
 							              <p><span>'.$row["aboutDish"].'</span></p>
-							              <p><a href="#" class="btn btn-primary">Order now</a></p>
+							              <p><a href="OrderList.php" class="btn btn-primary">Order now</a></p>
 						              </div>
 					              </div>
 					            </div>
