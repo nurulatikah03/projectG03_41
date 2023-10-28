@@ -74,7 +74,7 @@
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <a class="nav-link" href="../../startbootstrap-sb-admin-gh-pages/homepage.html">
+                            <a class="nav-link" href="../../dashboard/homepage.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Homepage
                             </a>

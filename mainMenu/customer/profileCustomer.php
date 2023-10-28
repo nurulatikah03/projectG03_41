@@ -65,12 +65,12 @@ $row=mysqli_fetch_assoc($qry);
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	        	<li class="nav-item active"><a href="../../feliciano-master/index.html" class="nav-link">Home</a></li>
-	        	<li class="nav-item"><a href="../../feliciano-master/menu.php" class="nav-link">Menu</a></li>
-	          <li class="nav-item"><a href="../../feliciano-master/contact.html" class="nav-link">Contact</a></li>
+	        	<li class="nav-item active"><a href="../../Homepage/index.html" class="nav-link">Home</a></li>
+	        	<li class="nav-item"><a href="../../Homepage/menu.php" class="nav-link">Menu</a></li>
+	          <li class="nav-item"><a href="../../Homepage/contact.html" class="nav-link">Contact</a></li>
 			  <li class="nav-item"><a href="profileCustomer.php" class="nav-link">Profile</a></li>
 			  <li class="nav-item"><a href="../../mainMenu/loginPage.php" class="nav-link">Logout</a></li>
-	          <li class="nav-item cta"><a href="../../feliciano-master/feedback.php" class="nav-link">Share Your Feedback</a></li>
+	          <li class="nav-item cta"><a href="../../Homepage/feedback.php" class="nav-link">Share Your Feedback</a></li>
 	        </ul>
 	      </div>
 	    </div>
@@ -83,7 +83,7 @@ $row=mysqli_fetch_assoc($qry);
         <div class="row no-gutters slider-text align-items-end justify-content-center">
           <div class="col-md-9 ftco-animate text-center mb-4">
             <h1 class="mb-2 bread">Profile</h1>
-			<p class="breadcrumbs"><span class="mr-2"><a href="../../feliciano-master/index.html">Home <i class="ion-ios-arrow-forward"></i></a><span> Profile <i class="ion-ios-arrow-forward"></i></span></p>
+			<p class="breadcrumbs"><span class="mr-2"><a href="../../Homepage/index.html">Home <i class="ion-ios-arrow-forward"></i></a><span> Profile <i class="ion-ios-arrow-forward"></i></span></p>
           </div>
         </div>
       </div>

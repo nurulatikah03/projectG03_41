@@ -131,7 +131,7 @@
 					$selectedDishType="Family Buckets";
 					$qry=getListFromDishType($selectedDishType);
 					while($row=mysqli_fetch_assoc($qry)){
-						$imageURL = '../startbootstrap-sb-admin-gh-pages/uploads/'.$row["image_path"];
+						$imageURL = '../dashboard/uploads/'.$row["image_path"];
 						echo '
 						<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
 					        	<div class="menus d-sm-flex ftco-animate align-items-stretch">
@@ -165,7 +165,7 @@
 					$selectedDishType="Box Meals";
 					$qry=getListFromDishType($selectedDishType);
 					while($row=mysqli_fetch_assoc($qry)){
-						$imageURL = '../startbootstrap-sb-admin-gh-pages/uploads/'.$row["image_path"];
+						$imageURL = '../dashboard/uploads/'.$row["image_path"];
 						echo '
 						<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
 					        	<div class="menus d-sm-flex ftco-animate align-items-stretch">
@@ -198,7 +198,7 @@
 					$selectedDishType="Chicken";
 					$qry=getListFromDishType($selectedDishType);
 					while($row=mysqli_fetch_assoc($qry)){
-						$imageURL = '../startbootstrap-sb-admin-gh-pages/uploads/'.$row["image_path"];
+						$imageURL = '../dashboard/uploads/'.$row["image_path"];
 						echo '
 						<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
 					        	<div class="menus d-sm-flex ftco-animate align-items-stretch">
@@ -231,7 +231,7 @@
 					$selectedDishType="Kids Meals";
 					$qry=getListFromDishType($selectedDishType);
 					while($row=mysqli_fetch_assoc($qry)){
-						$imageURL = '../startbootstrap-sb-admin-gh-pages/uploads/'.$row["image_path"];
+						$imageURL = '../dashboard/uploads/'.$row["image_path"];
 						echo '
 						<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
 					        	<div class="menus d-sm-flex ftco-animate align-items-stretch">
@@ -264,7 +264,7 @@
 					$selectedDishType="Add-on Sides";
 					$qry=getListFromDishType($selectedDishType);
 					while($row=mysqli_fetch_assoc($qry)){
-						$imageURL = '../startbootstrap-sb-admin-gh-pages/uploads/'.$row["image_path"];
+						$imageURL = '../dashboard/uploads/'.$row["image_path"];
 						echo '
 						<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
 					        	<div class="menus d-sm-flex ftco-animate align-items-stretch">
@@ -297,7 +297,7 @@
 					$selectedDishType="Beverages";
 					$qry=getListFromDishType($selectedDishType);
 					while($row=mysqli_fetch_assoc($qry)){
-						$imageURL = '../startbootstrap-sb-admin-gh-pages/uploads/'.$row["image_path"];
+						$imageURL = '../dashboard/uploads/'.$row["image_path"];
 						echo '
 						<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
 					        	<div class="menus d-sm-flex ftco-animate align-items-stretch">
@@ -330,7 +330,7 @@
 					$selectedDishType="Burgers & Twister";
 					$qry=getListFromDishType($selectedDishType);
 					while($row=mysqli_fetch_assoc($qry)){
-						$imageURL = '../startbootstrap-sb-admin-gh-pages/uploads/'.$row["image_path"];
+						$imageURL = '../dashboard/uploads/'.$row["image_path"];
 						echo '
 						<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
 					        	<div class="menus d-sm-flex ftco-animate align-items-stretch">
@@ -363,7 +363,7 @@
 					$selectedDishType="Nuggets & Tenders";
 					$qry=getListFromDishType($selectedDishType);
 					while($row=mysqli_fetch_assoc($qry)){
-						$imageURL = '../startbootstrap-sb-admin-gh-pages/uploads/'.$row["image_path"];
+						$imageURL = '../dashboard/uploads/'.$row["image_path"];
 						echo '
 						<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
 					        	<div class="menus d-sm-flex ftco-animate align-items-stretch">

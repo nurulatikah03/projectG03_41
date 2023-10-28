@@ -52,22 +52,22 @@ $row=mysqli_fetch_assoc($qry);
                     <div class="sb-sidenav-menu">
                         <div class="nav">
 						<div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="../../startbootstrap-sb-admin-gh-pages/dashboardAdmin.html">
+                            <a class="nav-link" href="../../dashboard/dashboardAdmin.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
 							<div class="sb-sidenav-menu-heading">Staff</div>
-							<a class="nav-link" href="../../startbootstrap-sb-admin-gh-pages/staffList/staffList.php">
+							<a class="nav-link" href="../../dashboard/staffList/staffList.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                                 Staff List
 							</a>
 							<div class="sb-sidenav-menu-heading">Customer</div>
-							<a class="nav-link" href="../../startbootstrap-sb-admin-gh-pages/customerList/customerList.php">
+							<a class="nav-link" href="../../dashboard/customerList/customerList.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-bookmark"></i></div>
                                 Customer List
 							</a>
 							<div class="sb-sidenav-menu-heading">Menu</div>
-							<a class="nav-link" href="../../startbootstrap-sb-admin-gh-pages/viewMenu-admin.php">
+							<a class="nav-link" href="../../dashboard/viewMenu-admin.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-cutlery"></i></div>
                                 View Menu
 							</a>

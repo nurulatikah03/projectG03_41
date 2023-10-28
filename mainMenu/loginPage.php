@@ -70,11 +70,11 @@ session_start();
 			$userType=getUserType($_POST['email']);
 			$_SESSION['emailLogin']=$_POST['email'];
 			if($userType=='ADMIN'){
-				echo "<script>window.top.location='../startbootstrap-sb-admin-gh-pages/dashboardAdmin.html'</script>";
+				echo "<script>window.top.location='../dashboard/dashboardAdmin.html'</script>";
 			}else if($userType=='STAFF'){
-				echo "<script>window.top.location='../startbootstrap-sb-admin-gh-pages/dashboardStaff.html'</script>";
+				echo "<script>window.top.location='../dashboard/dashboardStaff.html'</script>";
 			}else{
-				echo "<script>window.top.location='../feliciano-master'</script>";
+				echo "<script>window.top.location='../Homepage'</script>";
 			}
 		}
 		else{
