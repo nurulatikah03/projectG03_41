@@ -1,3 +1,6 @@
+<?PHP
+include "add_to_database.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -74,7 +77,7 @@
 				<li class="nav-item cta"><a href="feedback.php" class="nav-link">Share Your Feedback</a></li>
 		<div class="sidenav">
 			<ul style="list-style-type: none; padding: 0;">
-				<li class="nav-item"><a href="orderList.php" class="nav-link"><span class="icon-shopping-cart"></span></a></li>
+				<li class="nav-item"><a href="orderList.php" class="nav-link" onclick="addCartItemToDatabase()"><span class="icon-shopping-cart"></span></a></li>
 			</ul>
 		</div>  
 			</ul>
@@ -125,36 +128,36 @@
 	            
 	            <div class="tab-content" id="v-pills-tabContent">
 
-	              <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="day-1-tab"><!--Nasi Lemak KFC-->
+	              <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="day-1-tab">
 				  <div class="row no-gutters d-flex align-items-stretch">
 				 <?php
 					$selectedDishType="Family Buckets";
 					$qry=getListFromDishType($selectedDishType);
 					while($row=mysqli_fetch_assoc($qry)){
 						$imageURL = '../dashboard/uploads/'.$row["image_path"];
-						echo '
+						$prod_id= $row['id'];?>
 						<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
 					        	<div class="menus d-sm-flex ftco-animate align-items-stretch">
-					              <div class="menu-img img" style="background-image: url('.$imageURL.');"></div>
+					              <div class="menu-img img" style="background-image: url(<?php echo $imageURL;?>);"></div>
 					              <div class="text d-flex align-items-center">
-													<div>
+									<div>
 						              	<div class="d-flex">
 							                <div class="one-half">
-							                  <h3>'.$row["nameDish"].'</h3>
+							                  <h3><?php echo $row["nameDish"]; ?></h3>
 							                </div>
 							                <div class="one-forth">
-							                  <span class="price">RM '.$row["dishPrice"].'</span>
+							                  <span class="price">RM <?php echo $row["dishPrice"]; ?></span>
 							                </div>
 							              </div>
-							              <p><span>'.$row["aboutDish"].'</span></p>
-							              <p><a href="OrderList.php" class="btn btn-primary">Order now</a></p>
-						              </div>
+							              <p><span><?php echo $row["aboutDish"]; ?></span></p>
+										  <button class="btn btn-primary" onclick="addToCart('<?php echo $row["nameDish"]; ?>', '<?php echo $row["dishPrice"]; ?>','<?php echo $row["image_path"];?>')">Add</button>
+									</div>
 					              </div>
 					            </div>
-					        	</div>
-						';
-					}
-					?>
+					       </div>
+						
+					<?php } ?>
+					
 					        	
 					</div>
 	              </div>
@@ -166,29 +169,28 @@
 					$qry=getListFromDishType($selectedDishType);
 					while($row=mysqli_fetch_assoc($qry)){
 						$imageURL = '../dashboard/uploads/'.$row["image_path"];
-						echo '
+						$prod_id= $row['id'];?>
 						<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
 					        	<div class="menus d-sm-flex ftco-animate align-items-stretch">
-					              <div class="menu-img img" style="background-image: url('.$imageURL.');"></div>
+					              <div class="menu-img img" style="background-image: url(<?php echo $imageURL;?>);"></div>
 					              <div class="text d-flex align-items-center">
-													<div>
+									<div>
 						              	<div class="d-flex">
 							                <div class="one-half">
-							                  <h3>'.$row["nameDish"].'</h3>
+							                  <h3><?php echo $row["nameDish"]; ?></h3>
 							                </div>
 							                <div class="one-forth">
-							                  <span class="price">RM '.$row["dishPrice"].'</span>
+							                  <span class="price">RM <?php echo $row["dishPrice"]; ?></span>
 							                </div>
 							              </div>
-							              <p><span>'.$row["aboutDish"].'</span></p>
-							              <p><a href="OrderList.php" class="btn btn-primary">Order now</a></p>
-						              </div>
+							              <p><span><?php echo $row["aboutDish"]; ?></span></p>
+										  <button class="btn btn-primary" onclick="addToCart('<?php echo $row["nameDish"]; ?>', '<?php echo $row["dishPrice"]; ?>','<?php echo $row["image_path"];?>')">Add</button>
+									</div>
 					              </div>
 					            </div>
-					        	</div>
-						';
-					}
-					?>
+					       </div>
+						
+					<?php } ?>
 					</div>
 	              </div>
 
@@ -199,29 +201,28 @@
 					$qry=getListFromDishType($selectedDishType);
 					while($row=mysqli_fetch_assoc($qry)){
 						$imageURL = '../dashboard/uploads/'.$row["image_path"];
-						echo '
+						$prod_id= $row['id'];?>
 						<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
 					        	<div class="menus d-sm-flex ftco-animate align-items-stretch">
-					              <div class="menu-img img" style="background-image: url('.$imageURL.');"></div>
+					              <div class="menu-img img" style="background-image: url(<?php echo $imageURL;?>);"></div>
 					              <div class="text d-flex align-items-center">
-													<div>
+									<div>
 						              	<div class="d-flex">
 							                <div class="one-half">
-							                  <h3>'.$row["nameDish"].'</h3>
+							                  <h3><?php echo $row["nameDish"]; ?></h3>
 							                </div>
 							                <div class="one-forth">
-							                  <span class="price">RM '.$row["dishPrice"].'</span>
+							                  <span class="price">RM <?php echo $row["dishPrice"]; ?></span>
 							                </div>
 							              </div>
-							              <p><span>'.$row["aboutDish"].'</span></p>
-							              <p><a href="OrderList.php" class="btn btn-primary">Order now</a></p>
-						              </div>
+							              <p><span><?php echo $row["aboutDish"]; ?></span></p>
+										  <button class="btn btn-primary" onclick="addToCart('<?php echo $row["nameDish"]; ?>', '<?php echo $row["dishPrice"]; ?>','<?php echo $row["image_path"]; ?>')">Add</button>
+									</div>
 					              </div>
 					            </div>
-					        	</div>
-						';
-					}
-					?>   	
+					       </div>
+						
+					<?php } ?>  	
 					</div>
 	              </div>
 
@@ -232,29 +233,28 @@
 					$qry=getListFromDishType($selectedDishType);
 					while($row=mysqli_fetch_assoc($qry)){
 						$imageURL = '../dashboard/uploads/'.$row["image_path"];
-						echo '
+						$prod_id= $row['id'];?>
 						<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
 					        	<div class="menus d-sm-flex ftco-animate align-items-stretch">
-					              <div class="menu-img img" style="background-image: url('.$imageURL.');"></div>
+					              <div class="menu-img img" style="background-image: url(<?php echo $imageURL;?>);"></div>
 					              <div class="text d-flex align-items-center">
-													<div>
+									<div>
 						              	<div class="d-flex">
 							                <div class="one-half">
-							                  <h3>'.$row["nameDish"].'</h3>
+							                  <h3><?php echo $row["nameDish"]; ?></h3>
 							                </div>
 							                <div class="one-forth">
-							                  <span class="price">RM '.$row["dishPrice"].'</span>
+							                  <span class="price">RM <?php echo $row["dishPrice"]; ?></span>
 							                </div>
 							              </div>
-							              <p><span>'.$row["aboutDish"].'</span></p>
-							              <p><a href="OrderList.php" class="btn btn-primary">Order now</a></p>
-						              </div>
+							              <p><span><?php echo $row["aboutDish"]; ?></span></p>
+										  <button class="btn btn-primary" onclick="addToCart('<?php echo $row["nameDish"]; ?>', '<?php echo $row["dishPrice"]; ?>','<?php echo $row["image_path"];?>')">Add</button>
+									</div>
 					              </div>
 					            </div>
-					        	</div>
-						';
-					}
-					?>  
+					       </div>
+						
+					<?php } ?>  
 					</div>
 	              </div>
 
@@ -265,29 +265,28 @@
 					$qry=getListFromDishType($selectedDishType);
 					while($row=mysqli_fetch_assoc($qry)){
 						$imageURL = '../dashboard/uploads/'.$row["image_path"];
-						echo '
+						$prod_id= $row['id'];?>
 						<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
 					        	<div class="menus d-sm-flex ftco-animate align-items-stretch">
-					              <div class="menu-img img" style="background-image: url('.$imageURL.');"></div>
+					              <div class="menu-img img" style="background-image: url(<?php echo $imageURL;?>);"></div>
 					              <div class="text d-flex align-items-center">
-													<div>
+									<div>
 						              	<div class="d-flex">
 							                <div class="one-half">
-							                  <h3>'.$row["nameDish"].'</h3>
+							                  <h3><?php echo $row["nameDish"]; ?></h3>
 							                </div>
 							                <div class="one-forth">
-							                  <span class="price">RM '.$row["dishPrice"].'</span>
+							                  <span class="price">RM <?php echo $row["dishPrice"]; ?></span>
 							                </div>
 							              </div>
-							              <p><span>'.$row["aboutDish"].'</span></p>
-							              <p><a href="OrderList.php" class="btn btn-primary">Order now</a></p>
-						              </div>
+							              <p><span><?php echo $row["aboutDish"]; ?></span></p>
+										  <button class="btn btn-primary" onclick="addToCart('<?php echo $row["nameDish"]; ?>', '<?php echo $row["dishPrice"]; ?>','<?php echo $row["image_path"];?>')">Add</button>
+									</div>
 					              </div>
 					            </div>
-					        	</div>
-						';
-					}
-					?>  
+					       </div>
+						
+					<?php } ?>
 					</div>
 	              </div>
 					
@@ -298,29 +297,28 @@
 					$qry=getListFromDishType($selectedDishType);
 					while($row=mysqli_fetch_assoc($qry)){
 						$imageURL = '../dashboard/uploads/'.$row["image_path"];
-						echo '
+						$prod_id= $row['id'];?>
 						<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
 					        	<div class="menus d-sm-flex ftco-animate align-items-stretch">
-					              <div class="menu-img img" style="background-image: url('.$imageURL.');"></div>
+					              <div class="menu-img img" style="background-image: url(<?php echo $imageURL;?>);"></div>
 					              <div class="text d-flex align-items-center">
-													<div>
+									<div>
 						              	<div class="d-flex">
 							                <div class="one-half">
-							                  <h3>'.$row["nameDish"].'</h3>
+							                  <h3><?php echo $row["nameDish"]; ?></h3>
 							                </div>
 							                <div class="one-forth">
-							                  <span class="price">RM '.$row["dishPrice"].'</span>
+							                  <span class="price">RM <?php echo $row["dishPrice"]; ?></span>
 							                </div>
 							              </div>
-							              <p><span>'.$row["aboutDish"].'</span></p>
-							              <p><a href="OrderList.php" class="btn btn-primary">Order now</a></p>
-						              </div>
+							              <p><span><?php echo $row["aboutDish"]; ?></span></p>
+										  <button class="btn btn-primary" onclick="addToCart('<?php echo $row["nameDish"]; ?>', '<?php echo $row["dishPrice"]; ?>','<?php echo $row["image_path"];?>')">Add</button>
+									</div>
 					              </div>
 					            </div>
-					        	</div>
-						';
-					}
-					?>  
+					       </div>
+						
+					<?php } ?>
 					</div>
 	              </div>
 					
@@ -331,29 +329,28 @@
 					$qry=getListFromDishType($selectedDishType);
 					while($row=mysqli_fetch_assoc($qry)){
 						$imageURL = '../dashboard/uploads/'.$row["image_path"];
-						echo '
+						$prod_id= $row['id'];?>
 						<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
 					        	<div class="menus d-sm-flex ftco-animate align-items-stretch">
-					              <div class="menu-img img" style="background-image: url('.$imageURL.');"></div>
+					              <div class="menu-img img" style="background-image: url(<?php echo $imageURL;?>);"></div>
 					              <div class="text d-flex align-items-center">
-													<div>
+									<div>
 						              	<div class="d-flex">
 							                <div class="one-half">
-							                  <h3>'.$row["nameDish"].'</h3>
+							                  <h3><?php echo $row["nameDish"]; ?></h3>
 							                </div>
 							                <div class="one-forth">
-							                  <span class="price">RM '.$row["dishPrice"].'</span>
+							                  <span class="price">RM <?php echo $row["dishPrice"]; ?></span>
 							                </div>
 							              </div>
-							              <p><span>'.$row["aboutDish"].'</span></p>
-							              <p><a href="OrderList.php" class="btn btn-primary">Order now</a></p>
-						              </div>
+							              <p><span><?php echo $row["aboutDish"]; ?></span></p>
+										  <button class="btn btn-primary" onclick="addToCart('<?php echo $row["nameDish"]; ?>', '<?php echo $row["dishPrice"]; ?>','<?php echo $row["image_path"];?>')">Add</button>
+									</div>
 					              </div>
 					            </div>
-					        	</div>
-						';
-					}
-					?>  
+					       </div>
+						
+					<?php } ?>
 					</div>
 	              </div>
 					
@@ -364,31 +361,31 @@
 					$qry=getListFromDishType($selectedDishType);
 					while($row=mysqli_fetch_assoc($qry)){
 						$imageURL = '../dashboard/uploads/'.$row["image_path"];
-						echo '
+						$prod_id= $row['id'];?>
 						<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
 					        	<div class="menus d-sm-flex ftco-animate align-items-stretch">
-					              <div class="menu-img img" style="background-image: url('.$imageURL.');"></div>
+					              <div class="menu-img img" style="background-image: url(<?php echo $imageURL;?>);"></div>
 					              <div class="text d-flex align-items-center">
-													<div>
+									<div>
 						              	<div class="d-flex">
 							                <div class="one-half">
-							                  <h3>'.$row["nameDish"].'</h3>
+							                  <h3><?php echo $row["nameDish"]; ?></h3>
 							                </div>
 							                <div class="one-forth">
-							                  <span class="price">RM '.$row["dishPrice"].'</span>
+							                  <span class="price">RM <?php echo $row["dishPrice"]; ?></span>
 							                </div>
 							              </div>
-							              <p><span>'.$row["aboutDish"].'</span></p>
-							              <p><a href="OrderList.php" class="btn btn-primary">Order now</a></p>
-						              </div>
+							              <p><span><?php echo $row["aboutDish"]; ?></span></p>
+										  <button class="btn btn-primary" onclick="addToCart('<?php echo $row["nameDish"]; ?>', '<?php echo $row["dishPrice"]; ?>','<?php echo $row["image_path"];?>')">Add</button>
+									</div>
 					              </div>
 					            </div>
-					        	</div>
-						';
-					}
-					?>  
+					       </div>
+						
+					<?php } ?>
 					</div>
 	              </div>
+				  <button class="btn btn-primary" onclick="addCartItemToDatabase()">Submit Order</button>
 	            </div>
 	          </div>
 	        </div>
@@ -489,7 +486,64 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
-    
+    <script>
+	var cart = [];
+	
+	  function addToCart(dishName, dishPrice, imagePath) {
+		var product = {
+		  name: dishName,
+		  price: dishPrice,
+		  image: imagePath,
+		};
+
+		// Add the product to the cart array
+		cart.push(product);
+		
+		// Iterate through the cart and build the cartContent string
+		var cartContent = "Cart Items:\n";
+		for (var i = 0; i < cart.length; i++) {
+		  cartContent += cart[i].name + " - RM " + cart[i].price + "\n";
+		}
+
+		// Display the cart content in an alert
+		alert(cartContent);
+	  }
+</script>
+
+<script>
+function addCartItemToDatabase() {
+    // You can perform an AJAX request to a PHP script to add items to the database
+    // Here's a simplified example of an AJAX request using the fetch API:
+    fetch('add_to_database.php', {
+        method: 'POST',
+        body: JSON.stringify({ cart }), // Send cart data as JSON
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.text();
+    })
+    .then(data => {
+        const response = JSON.parse(data);
+        if (response.statusInsert === 'success') {
+            // Display a success message
+            alert(response.message);
+			cart=[];
+        } else {
+            // Display an error message
+            alert(response.message);
+        }
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+    });
+}
+
+</script>
   </body>
 </html>
 

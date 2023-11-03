@@ -65,6 +65,11 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-cutlery"></i></div>
                                 View Menu
 							</a>
+							<div class="sb-sidenav-menu-heading">Order</div>
+							<a class="nav-link" href="../../dashboard/viewOrder-admin.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-thumbs-up"></i></div>
+                                View Order
+							</a>
 							<div class="sb-sidenav-menu-heading">Feedback</div>
 							<a class="nav-link" href="#">
                                 <div class="sb-nav-link-icon"><i class="fas fa-thumbs-up"></i></div>

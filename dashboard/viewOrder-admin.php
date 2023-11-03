@@ -9,7 +9,7 @@ session_start();
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Menu</title>
+        <title>Order</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -62,12 +62,12 @@ session_start();
                                 Customer List
 							</a>
 							<div class="sb-sidenav-menu-heading">Menu</div>
-							<a class="nav-link" href="#">
+							<a class="nav-link" href="viewMenu-admin.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-cutlery"></i></div>
                                 View Menu
 							</a>
 							<div class="sb-sidenav-menu-heading">Order</div>
-							<a class="nav-link" href="viewOrder-admin.php">
+							<a class="nav-link" href="#">
                                 <div class="sb-nav-link-icon"><i class="fas fa-thumbs-up"></i></div>
                                 View Order
 							</a>
@@ -87,100 +87,90 @@ session_start();
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Menu List</h1>
-                        <ol class="breadcrumb mb-4">
-							<form action="uploadImage.php" method="POST" enctype="multipart/form-data">
-								<fieldset>
-									<legend>Upload Menu Item</legend>
-									
-									<div class="mb-3">
-										<label for="file" class="form-label">Select Image File to Upload (JPG, JPEG, PNG, GIF):</label>
-										<input type="file" class="form-control custom-file-input" id="file" name="file" required>
-									</div>
-
-									<div class="mb-3">
-										<label for="dishName" class="form-label">Dish Name:</label>
-										<input type="text" class="form-control" id="dishName" name="dishName" placeholder="Enter name" required>
-									</div>
-
-									<div class="mb-3">
-										<label for="dishPrice" class="form-label">Set Dish Price (RM):</label>
-										<input type="number" class="form-control" id="dishPrice" name="dishPrice" placeholder="Price (RM)" required>
-									</div>
-
-									<div class="mb-3">
-										<label for="dishType" class="form-label">Dish Type:</label>
-										<select class="form-select" id="dishType" name="dishType" required>
-											<option>Family Buckets</option>
-											<option>Box Meals</option>
-											<option>Chicken</option>
-											<option>Kids Meals</option>
-											<option>Add-on Sides</option>
-											<option>Beverages</option>
-											<option>Burgers & Twister</option>
-											<option>Nuggets & Tenders</option>
-										</select>
-									</div>
-
-									<div class="mb-3">
-										<label for="aboutDish" class="form-label">About:</label>
-										<input type="text" class="form-control" id="aboutDish" name="aboutDish" placeholder="About Dish" required>
-									</div>
-
-									<button type="submit" class="btn btn-primary" name="submit_admin">Upload</button>
-								</fieldset>
-							</form>
-
-                        </ol>
+                        <h1 class="mt-4">Order List</h1>
 						<table class="table">
 							<thead>
 								<tr class="table-primary">
-									<th style="text-align: center;">Prod_ID</th>
+									<th style="text-align: center;">Order ID</th>
+									<th style="text-align: center;">Image</th>
 									<th style="text-align: center;">Dish Name</th>
 									<th style="text-align: center;">Price</th>
-									<th style="text-align: center;">Type</th>
-									<th style="text-align: center;">About</th>
-									<th style="text-align: center;">Image</th>
-									<th style="text-align: center;">Edit</th>
-									<th style="text-align: center;">Delete</th>
+									<th style="text-align: center;">Status</th>
+									<th style="text-align: center;">Accept</th>
+									<th style="text-align: center;">Reject</th>
+									<th style="text-align: center;">Done</th>
 								</tr>
 							</thead>
                         <?php
-							$qry=getListOfImage();
+							$qry=getListOfOrder();
 							while($row=mysqli_fetch_assoc($qry)){
 							$imageURL = 'uploads/'.$row["image_path"];
 							echo "
 							<tbody>
 								<tr>
 									<td style='text-align: center;'>".$row['id']."</td>
-									<td style='text-align: center;'>".$row['nameDish']."</td>
-									<td style='text-align: center;'> RM ".$row['dishPrice']."</td>
-									<td style='text-align: center;'>".$row['dishType']."</td>
-									<td style='text-align: center;'>".$row['aboutDish']."</td>
-									<td style='text-align: center;'>";?><img src="<?php echo $imageURL; ?>" alt="" width="50" height="50"/><?php echo "</td>";
-									$dishName = $row['nameDish'];
+									<td style='text-align: center;'>";?><img src="<?php echo $imageURL; ?>" alt="" width="50" height="50"/><?php echo "</td>
+									<td style='text-align: center;'>".$row['name']."</td>
+									<td style='text-align: center;'> RM ".$row['price']."</td>
+									<td style='text-align: center;'>".$row['status']."</td>";
+									$dishID = $row['id'];
+									if($row['status']=='Waiting For Accept'){
 									echo "
 									<td style='text-align: center;'>
 									<form action='' method='POST'>
-										<input type='hidden' value='$dishName' name='dishNameToEdit'>
-										<button class='btn btn-success' name='editDishButton' >EDIT</button>
+										<input type='hidden' value='$dishID' name='dishIDToAccept'>
+										<button class='btn btn-success' name='acceptDishButton' >Accept</button>
 									</form>
 									</td>
+
 									<td style='text-align: center;'>
 									<form action='' method='POST'>
-										<input type='hidden' value='$dishName' name='dishNameToDelete'>
-										<button class='btn btn-danger' name='deleteDishButton' >DELETE</button>
+										<input type='hidden' value='$dishID' name='dishIDToReject'>
+										<button class='btn btn-danger' name='rejectDishButton' >Reject</button>
 									</form>
 									</td>
-									
+
+									<td style='text-align: center;'>
+										<button class='btn btn-secondary' disabled>Done</button>
+									</td>
+									";
+									}else if($row['status']=='ACCEPTED'){
+									echo "
+										<td style='text-align: center;'>
+											<button class='btn btn-secondary' disabled>Accept</button>
+										</td>
+										<td style='text-align: center;'>
+											<button class='btn btn-secondary' disabled>Reject</button>
+										</td>
+										<td style='text-align: center;'>
+										<form action='' method='POST'>
+											<input type='hidden' value='$dishID' name='dishIDToPickUp'>
+											<button class='btn btn-info' name='doneDishButton' >Done</button>
+										</form>
+										</td>
+									";
+									}else{
+									echo "
+									<td style='text-align: center;'>
+										<button class='btn btn-secondary' disabled>Accept</button>
+									</td>
+									<td style='text-align: center;'>
+										<button class='btn btn-secondary' disabled>Reject</button>
+									</td>
+									<td style='text-align: center;'>
+										<button class='btn btn-secondary' disabled>Done</button>
+									</td>
+									";
+									}
+									echo"
 								</tr>
 							</tbody>
-							";
+							";	
 							}
 						?>
 						</table>
+						</div>
                 </main>
-					</div>
 			</div>
 		</div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
@@ -194,24 +184,43 @@ session_start();
 </html>
 
 <?php
-if(isSet($_POST['editDishButton'])){
-	$_SESSION['editingUser']='ADMIN';
-	$_SESSION['dishNameToEdit']=$_POST['dishNameToEdit'];
-	echo "<script>window.top.location='editImage.php'</script>";
+if(isSet($_POST['acceptDishButton'])){
+	acceptDish();
+	echo "<script>window.top.location='viewOrder-admin.php'</script>";
 }
-if(isSet($_POST['deleteDishButton'])){
-	deleteImage($_POST['dishNameToDelete']);
+
+if(isSet($_POST['rejectDishButton'])){
+	rejectDish();
+	echo "<script>window.top.location='viewOrder-admin.php'</script>";
 }
-function getListOfImage(){
+
+if(isSet($_POST['doneDishButton'])){
+	doneDish();
+	echo "<script>window.top.location='viewOrder-admin.php'</script>";
+}
+
+function getListOfOrder(){
 	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
-	$sql = "SELECT * FROM menu ORDER BY id";
+	$sql = "SELECT * FROM cart_items ORDER BY CASE WHEN status ='Waiting For Accept' THEN 1 WHEN status='ACCEPTED' THEN 2 WHEN status='READY' THEN 3 WHEN status='REJECTED' THEN 4 ELSE 5 END;";
 	$query = mysqli_query($con,$sql);
 	return $query;
 }
-function deleteImage($nameDish){
+
+function rejectDish(){
 	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
-	$sql = "delete from menu where nameDish='".$nameDish."'";
+	$sql = $sql = "UPDATE cart_items SET status='REJECTED' WHERE id='".$_POST['dishIDToReject']."'";
 	mysqli_query($con,$sql);
-	echo "<script>window.top.location='viewMenu-admin.php'</script>";
+}
+
+function acceptDish() {
+	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+	$sql = "UPDATE cart_items SET status='ACCEPTED' WHERE id='".$_POST['dishIDToAccept']."'";
+	mysqli_query($con,$sql);
+}
+
+function doneDish(){
+	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+	$sql = "UPDATE cart_items SET status='READY' WHERE id='".$_POST['dishIDToPickUp']."'";
+	mysqli_query($con,$sql);
 }
 ?>

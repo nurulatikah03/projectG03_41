@@ -61,6 +61,11 @@ session_start();
                                 <div class="sb-nav-link-icon"><i class="fas fa-cutlery"></i></div>
                                 View Menu
 							</a>
+							<div class="sb-sidenav-menu-heading">Order</div>
+							<a class="nav-link" href="../viewOrder-Staff.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-cutlery"></i></div>
+                                View Order
+							</a>
 							<div class="sb-sidenav-menu-heading">Feedback</div>
 							<a class="nav-link" href="../../mainMenu/staff/viewFeedback-staff.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-thumbs-up"></i></div>
