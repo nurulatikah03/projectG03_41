@@ -1,3 +1,14 @@
+<?php
+$totalCust = getCustomerNum();
+$totalStaff = getStaffNum();
+$totalMenu = getMenuNum();
+$totalFeedback = getFeedbackNum();
+$salesQry = getSales();
+$totalSales=0;
+while ($row=mysqli_fetch_assoc($salesQry)){
+	$totalSales+=$row['price'];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -14,7 +25,7 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="dashboardAdmin.html">KFC&nbsp;</a>
+            <a class="navbar-brand ps-3" href="dashboardAdmin.php">KFC&nbsp;</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -44,7 +55,7 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
 						<div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="dashboardAdmin.html">
+                            <a class="nav-link" href="#">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
 							</a>
@@ -86,7 +97,41 @@
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Dashboard</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Dashboard</li>
+							<div class="card" style="width: 18rem;">
+								<div class="card-body">
+									<h5 class="card-title">Customer</h5>
+									<h6 class="card-subtitle mb-2 text-muted">Total :</h6>
+									<p class="card-text"><?php echo mysqli_num_rows($totalCust); ?></p>
+								</div>
+							</div>							
+							<div class="card" style="width: 18rem;">
+								<div class="card-body">
+									<h5 class="card-title">Staff</h5>
+									<h6 class="card-subtitle mb-2 text-muted">Total :</h6>
+									<p class="card-text"><?php echo mysqli_num_rows($totalStaff); ?></p>
+								</div>
+							</div>
+							<div class="card" style="width: 18rem;">
+								<div class="card-body">
+									<h5 class="card-title">Menu</h5>
+									<h6 class="card-subtitle mb-2 text-muted">Total :</h6>
+									<p class="card-text"><?php echo mysqli_num_rows($totalMenu); ?></p>
+								</div>
+							</div>	
+							<div class="card" style="width: 18rem;">
+								<div class="card-body">
+									<h5 class="card-title">Feedback</h5>
+									<h6 class="card-subtitle mb-2 text-muted">Total :</h6>
+									<p class="card-text"><?php echo mysqli_num_rows($totalFeedback); ?></p>
+								</div>
+							</div>							
+							<div class="card" style="width: 18rem;">
+								<div class="card-body">
+									<h5 class="card-title">Sales</h5>
+									<h6 class="card-subtitle mb-2 text-muted">Total :</h6>
+									<p class="card-text"><?php echo "RM ".$totalSales;?></p>
+								</div>
+							</div>
                         </ol>
                         
                 </main>
@@ -102,3 +147,70 @@
         <script src="js/datatables-simple-demo.js"></script>
     </body>
 </html>
+
+<?php
+function getCustomerNum()
+{
+$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+if(!$con)
+	{
+	echo  mysqli_connect_error(); 
+	exit;
+	}
+	$sql = 'select * from user_info where userType = "CUSTOMER" ';
+	$qry=mysqli_query($con,$sql);
+	return $qry;
+}
+
+function getStaffNum()
+{
+$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+if(!$con)
+	{
+	echo  mysqli_connect_error(); 
+	exit;
+	}
+	$sql = 'select * from user_info where userType = "STAFF" ';
+	$qry=mysqli_query($con,$sql);
+	return $qry;
+}
+
+function getMenuNum()
+{
+$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+if(!$con)
+	{
+	echo  mysqli_connect_error(); 
+	exit;
+	}
+	$sql = 'select * from menu';
+	$qry=mysqli_query($con,$sql);
+	return $qry;
+}
+
+function getSales()
+{
+$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+if(!$con)
+	{
+	echo  mysqli_connect_error(); 
+	exit;
+	}
+	$sql = 'select * from cart_items WHERE status != "REJECTED"';
+	$qry=mysqli_query($con,$sql);
+	return $qry;
+}
+
+function getFeedbackNum()
+{
+$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+if(!$con)
+	{
+	echo  mysqli_connect_error(); 
+	exit;
+	}
+	$sql = 'select * from feedbackcustomer';
+	$qry=mysqli_query($con,$sql);
+	return $qry;
+}
+?>

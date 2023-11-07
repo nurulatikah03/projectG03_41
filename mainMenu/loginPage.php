@@ -70,7 +70,7 @@ session_start();
 			$userType=getUserType($_POST['email']);
 			$_SESSION['emailLogin']=$_POST['email'];
 			if($userType=='ADMIN'){
-				echo "<script>window.top.location='../dashboard/dashboardAdmin.html'</script>";
+				echo "<script>window.top.location='../dashboard/dashboardAdmin.php'</script>";
 			}else if($userType=='STAFF'){
 				echo "<script>window.top.location='../dashboard/dashboardStaff.html'</script>";
 			}else{

@@ -2,7 +2,7 @@
 session_start();
 $qry=getUserInfo();
 $row=mysqli_fetch_assoc($qry);
-//$row['email'];
+$qryHistory=getOrderHistory();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -138,6 +138,41 @@ $row=mysqli_fetch_assoc($qry);
         </div>
     </div>
 </section>
+
+<section class="ftco-section ftco-no-pt ftco-no-pb">
+	<div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 ftco-animate makereservation p-4 p-md-5 pt-5">
+                <div class="py-md-5">
+				<h2 class="text-center"><b>Order History</b></h2><br><br>
+					<table class="table">
+						<tr class="table-warning">
+							<th style="text-align: center;">Order ID</th>
+							<th style="text-align: center;">Dish Name</th>
+							<th style="text-align: center;">Price</th>
+							<th style="text-align: center;">Status</th>
+						</tr>
+						<?php
+						while($row2=mysqli_fetch_assoc($qryHistory)){
+							echo 
+							"<tbody>
+							<tr>
+							<td style='text-align: center;'>".$row2['id']."</td>
+							<td style='text-align: center;'>".$row2['name']."</td>
+							<td style='text-align: center;'>RM ".$row2['price']."</td>
+							<td style='text-align: center;'>".$row2['status']."</td>
+							<tr>
+							</tbody>
+							";
+						}
+						?>
+					</table>	
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
 		
     <footer class="ftco-footer ftco-bg-dark ftco-section">
       <div class="container">
@@ -249,6 +284,21 @@ if(!$con)
 	$sql = 'select * from user_info where email = "'.$emailLogin.'"';
 	$qry=mysqli_query($con,$sql);
 	return $qry;
+}
+
+function getOrderHistory()
+{
+$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+if(!$con)
+	{
+	echo  mysqli_connect_error(); 
+	exit;
+	}
+	$emailLogin=$_SESSION['emailLogin'];
+	$sql = 'select * from cart_items where cust_email = "'.$emailLogin.'" AND status IN ("ACCEPTED", "READY", "REJECTED");';
+	$qry=mysqli_query($con,$sql);
+	return $qry;
+	
 }
 
 ?>
