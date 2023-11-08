@@ -1,5 +1,7 @@
 <?php
 session_start();
+$qry=getUserDetails();
+$row=mysqli_fetch_assoc($qry);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,18 +32,19 @@ session_start();
                                     <h3 class="text-center font-weight-light my-4">Edit Account Details</h3>
                                 </div>
                                 <div class="card-body">
+								<b>User ID : <?php echo $row['user_id'];?></b>
                                     <form action="" method="POST">
                                         <div class="mb-3">
                                             <label for="newFirstName" class="form-label">First Name</label>
-                                            <input type="text" class="form-control" id="newFirstName" name="newFirstName" required>
+                                            <input type="text" class="form-control" id="newFirstName" name="newFirstName" value="<?php echo $row['firstName']; ?>" required>
                                         </div>
                                         <div class="mb-3">
                                             <label for="newLastName" class="form-label">Last Name</label>
-                                            <input type="text" class="form-control" id="newLastName" name="newLastName" required>
+                                            <input type="text" class="form-control" id="newLastName" name="newLastName" value="<?php echo $row['lastName']; ?>" required>
                                         </div>
                                         <div class="mb-3">
                                             <label for="newPhoneNum" class="form-label">Phone Number</label>
-                                            <input type="text" class="form-control" id="newPhoneNum" name="newPhoneNum" required>
+                                            <input type="text" class="form-control" id="newPhoneNum" name="newPhoneNum" value="<?php echo $row['phoneNum']; ?>" required>
                                         </div>
                                         <div class="d-grid">
                                             <button class="btn btn-primary btn-block" type="submit" name="editDetailsButton">Confirm</button>
@@ -102,6 +105,18 @@ function getUserType($email)
         $userType = $row['userType'];
         return $userType;
     }
+}
+
+function getUserDetails(){
+	$con = mysqli_connect("localhost", "sd41g3", "sd41g3", "sd41g3");
+    if (!$con) {
+        echo mysqli_connect_error();
+        exit;
+    }
+	$email = $_SESSION['emailLogin'];
+    $sql = "SELECT * FROM user_info where email = '" . $email . "'";
+    $qry = mysqli_query($con, $sql);
+    return $qry;
 }
 ?>
 </html>
