@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	foreach ($cart as $item) {
     $name = $item['name'];
     $price = $item['price'];
-    $status = "Waiting For Accept";
+    $status = "PENDING PAYMENT";
 	$cust_email=$emailLogin;
 	$image_path=$item['image'];
 

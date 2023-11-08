@@ -109,7 +109,7 @@ session_start();
 									<td style='text-align: center;'> RM ".$row['price']."</td>
 									<td style='text-align: center;'>".$row['status']."</td>";
 									$dishID = $row['id'];
-									if($row['status']=='Waiting For Accept'){
+									if($row['status']=='PAID'){
 									echo "
 									<td style='text-align: center;'>
 									<form action='' method='POST'>
@@ -195,7 +195,7 @@ if(isSet($_POST['doneDishButton'])){
 
 function getListOfOrder(){
 	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
-	$sql = "SELECT * FROM cart_items ORDER BY CASE WHEN status ='Waiting For Accept' THEN 1 WHEN status='ACCEPTED' THEN 2 WHEN status='READY' THEN 3 WHEN status='REJECTED' THEN 4 ELSE 5 END;";
+	$sql = "SELECT * FROM cart_items ORDER BY CASE WHEN status ='PAID' THEN 1 WHEN status='ACCEPTED' THEN 2 WHEN status='READY' THEN 3 END;";
 	$query = mysqli_query($con,$sql);
 	return $query;
 }

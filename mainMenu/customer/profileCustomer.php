@@ -152,20 +152,34 @@ $qryHistory=getOrderHistory();
 							<th style="text-align: center;">Price</th>
 							<th style="text-align: center;">Status</th>
 						</tr>
+						<tbody>
 						<?php
 						while($row2=mysqli_fetch_assoc($qryHistory)){
-							echo 
-							"<tbody>
-							<tr>
-							<td style='text-align: center;'>".$row2['id']."</td>
-							<td style='text-align: center;'>".$row2['name']."</td>
-							<td style='text-align: center;'>RM ".$row2['price']."</td>
-							<td style='text-align: center;'>".$row2['status']."</td>
-							<tr>
-							</tbody>
-							";
+							if($row2['status']=="REJECTED"){
+								echo 
+								"<tr class='table-danger'>
+								<td style='text-align: center;'>".$row2['id']."</td>
+								<td style='text-align: center;'>".$row2['name']."</td>
+								<td style='text-align: center;'>RM ".$row2['price']."</td>
+								<td style='text-align: center;'>".$row2['status']."</td>
+								</tr>
+								
+								";
+							}else{
+								echo 
+								"<tbody>
+								<tr>
+								<td style='text-align: center;'>".$row2['id']."</td>
+								<td style='text-align: center;'>".$row2['name']."</td>
+								<td style='text-align: center;'>RM ".$row2['price']."</td>
+								<td style='text-align: center;'>".$row2['status']."</td>
+								</tr>
+								</tbody>
+								";
+							}
 						}
 						?>
+						</tbody>
 					</table>	
                 </div>
             </div>
@@ -295,7 +309,7 @@ if(!$con)
 	exit;
 	}
 	$emailLogin=$_SESSION['emailLogin'];
-	$sql = 'select * from cart_items where cust_email = "'.$emailLogin.'" AND status IN ("ACCEPTED", "READY", "REJECTED");';
+	$sql = 'select * from cart_items where cust_email = "'.$emailLogin.'" AND status IN ("READY", "REJECTED");';
 	$qry=mysqli_query($con,$sql);
 	return $qry;
 	
