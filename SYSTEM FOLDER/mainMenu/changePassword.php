@@ -58,7 +58,7 @@ if(isSet($_POST['resetButton'])){
 
 function changePassword(){
 	$emailToChangePass=$_SESSION['emailToChangePass'];
-	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+	$con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
 	if(!$con)
 	{
 	echo  mysqli_connect_error(); 
@@ -67,6 +67,6 @@ function changePassword(){
 	$sql= "UPDATE user_info SET password = '".$_POST['passwordToChange']."' WHERE email = '".$emailToChangePass."'";
 	//echo $sql;
 	mysqli_query($con,$sql);
-	echo "<script>window.top.location='loginPage.php'</script>";
+	echo "<script>window.top.location='../loginPage.php'</script>";
 }
 ?>

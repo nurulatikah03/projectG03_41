@@ -74,7 +74,7 @@ echo'
                                         </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="loginPage.php">Have an account? Go to login</a></div>
+                                        <div class="small"><a href="../loginPage.php">Have an account? Go to login</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -90,18 +90,29 @@ echo'
  
  //register button
 if(isSet($_POST['registerButton'])){
-	$_SESSION['emailToRegister']=$_POST['email'];
-	$_SESSION['passwordRegister']=$_POST['password'];
-	$_SESSION['firstNameRegister']=$_POST['firstName'];
-	$_SESSION['lastNameRegister']=$_POST['lastName'];
-	$_SESSION['phoneNumRegister']=$_POST['phoneNum'];
-	if($_POST['password']==$_POST['confirmPassword']){
-	sendOTPToRegisterEmail();
-	echo "<script>window.top.location='enterOTP.php'</script>";
-	}else{
-		echo "<script>alert('Wrong Password')</script>";
-	}
-	}
+    $validateToReg="TRUE";
+    $qry=detectRegisteredAcc();
+    while($row=mysqli_fetch_assoc($qry)){
+        if($row['email']==$_POST['email']){
+            echo "<script>alert('Account registered')</script>";
+            $validateToReg="FALSE";
+            echo "<script>window.top.location='../loginPage.php'</script>"; 
+        }
+    }
+    if($validateToReg=="TRUE"){
+    	$_SESSION['emailToRegister']=$_POST['email'];
+    	$_SESSION['passwordRegister']=$_POST['password'];
+    	$_SESSION['firstNameRegister']=$_POST['firstName'];
+    	$_SESSION['lastNameRegister']=$_POST['lastName'];
+    	$_SESSION['phoneNumRegister']=$_POST['phoneNum'];
+    	if($_POST['password']==$_POST['confirmPassword']){
+    	sendOTPToRegisterEmail();
+    	echo "<script>window.top.location='enterOTP.php'</script>";
+    	}else{
+    		echo "<script>alert('Wrong Password')</script>";
+    	}
+    }
+}
 
 if(isSet($_POST['otpButton'])){
 	if(validateOTP($_SESSION['emailToRegister'])==$_POST['otpEntered']){
@@ -110,9 +121,11 @@ if(isSet($_POST['otpButton'])){
 	}
 	
 function registerAcc(){
-	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
-	if(!$con){
-	echo "Error : ".mysqli_connect_error($con);
+	$con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
+	if(!$con)
+	{
+	echo  mysqli_connect_error(); 
+	exit;
 	}
 	else{
 	$email=$_SESSION['emailToRegister'];
@@ -124,8 +137,20 @@ function registerAcc(){
 	$sql = "insert into user_info(email,password,firstName,lastName,userType,phoneNum) values('$email', '$password','$firstName','$lastName','$userType','$phoneNum')";
 	mysqli_query($con,$sql);
 	deleteUsedOTP($email);
-	echo "<script>window.top.location='loginPage.php'</script>";
+	echo "<script>window.top.location='../loginPage.php'</script>";
 	}
+}
+
+function detectRegisteredAcc(){
+    $con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
+	if(!$con)
+	{
+	echo  mysqli_connect_error(); 
+	exit;
+	}
+	$sql = "select * from user_info";
+	$qry=mysqli_query($con,$sql);
+	return $qry;
 }
 
 ?>

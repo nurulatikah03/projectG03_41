@@ -17,7 +17,7 @@ session_start();
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="dashboardAdmin.html">KFC&nbsp;</a>
+            <a class="navbar-brand ps-3" href="../dashboardStaff.php">KFC&nbsp;</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -46,10 +46,10 @@ session_start();
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-						<div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="../dashboardStaff.html">
+						<div class="sb-sidenav-menu-heading">Order</div>
+                            <a class="nav-link" href="../dashboardStaff.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Dashboard
+                                View Order
 							</a>
 							<div class="sb-sidenav-menu-heading">Customer</div>
 							<a class="nav-link" href="#">
@@ -60,11 +60,6 @@ session_start();
 							<a class="nav-link" href="../viewMenu-staff.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-cutlery"></i></div>
                                 View Menu
-							</a>
-							<div class="sb-sidenav-menu-heading">Order</div>
-							<a class="nav-link" href="../viewOrder-Staff.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-cutlery"></i></div>
-                                View Order
 							</a>
 							<div class="sb-sidenav-menu-heading">Feedback</div>
 							<a class="nav-link" href="../../mainMenu/staff/viewFeedback-staff.php">
@@ -130,7 +125,12 @@ session_start();
 
 function getListOfCustomer()
 {
-	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+	$con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
+	if(!$con)
+	{
+	echo  mysqli_connect_error(); 
+	exit;
+	}
 	$sql = "select * from user_info where userType='CUSTOMER'";
 	$qry = mysqli_query($con,$sql);
 	return $qry;  

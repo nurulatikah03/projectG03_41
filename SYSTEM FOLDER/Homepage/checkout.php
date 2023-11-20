@@ -13,8 +13,8 @@ $stripe_secret_key = "sk_test_51OA3wHA6idJjdcEBH3GoRDUFnhlAKPvJSlgWXZqczfpf5CNAB
 
 $checkout_session = \Stripe\Checkout\Session::create([
 	"mode" => "payment",
-	"success_url" => "http://localhost/projectG03_41/Homepage/success.php",
-	"cancel_url" => "http://localhost/projectG03_41/Homepage/menu.php",
+	"success_url" => "https://kfc.projectg341.online/Homepage/success.php",
+	"cancel_url" => "https://kfc.projectg341.online/Homepage/menu.php",
 	"line_items" => [
 		[
 			"quantity" => 1,
@@ -36,8 +36,8 @@ header("Location: ".$checkout_session->url);
 <?php
 function getCartItems()
 {
-$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
-if(!$con)
+    $con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
+	if(!$con)
 	{
 	echo  mysqli_connect_error(); 
 	exit;

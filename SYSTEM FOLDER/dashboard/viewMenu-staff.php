@@ -46,10 +46,10 @@ session_start();
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-						<div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="dashboardStaff.html">
+						<div class="sb-sidenav-menu-heading">Order</div>
+                            <a class="nav-link" href="dashboardStaff.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Dashboard
+                                View Order
 							</a>
 							<div class="sb-sidenav-menu-heading">Customer</div>
 							<a class="nav-link" href="customerList/customerList-Staff.php">
@@ -60,11 +60,6 @@ session_start();
 							<a class="nav-link" href="#">
                                 <div class="sb-nav-link-icon"><i class="fas fa-cutlery"></i></div>
                                 View Menu
-							</a>
-							<div class="sb-sidenav-menu-heading">Order</div>
-							<a class="nav-link" href="viewOrder-Staff.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-cutlery"></i></div>
-                                View Order
 							</a>
 							<div class="sb-sidenav-menu-heading">Feedback</div>
 							<a class="nav-link" href="../mainMenu/staff/viewFeedback-staff.php">
@@ -206,14 +201,24 @@ if(isSet($_POST['deleteDishButton'])){
 }
 
 function getListOfImage(){
-	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+	$con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
+	if(!$con)
+	{
+	echo  mysqli_connect_error(); 
+	exit;
+	}
 	$sql = "SELECT * FROM menu ORDER BY id";
 	$query = mysqli_query($con,$sql);
 	return $query;
 }
 
 function deleteImage($nameDish){
-	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+	$con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
+	if(!$con)
+	{
+	echo  mysqli_connect_error(); 
+	exit;
+	}
 	$sql = "delete from menu where nameDish='".$nameDish."'";
 	mysqli_query($con,$sql);
 	echo "<script>window.top.location='viewMenu-staff.php'</script>";

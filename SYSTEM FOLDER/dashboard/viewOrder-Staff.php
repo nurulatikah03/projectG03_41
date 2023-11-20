@@ -194,7 +194,12 @@ if(isSet($_POST['doneDishButton'])){
 }
 
 function getListOfOrder(){
-	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+	$con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
+	if(!$con)
+	{
+	echo  mysqli_connect_error(); 
+	exit;
+	}
 	$sql = "SELECT * FROM cart_items ORDER BY CASE WHEN status ='PAID' THEN 1 WHEN status='ACCEPTED' THEN 2 WHEN status='READY' THEN 3 END;";
 	$query = mysqli_query($con,$sql);
 	return $query;
@@ -202,19 +207,34 @@ function getListOfOrder(){
 
 
 function rejectDish(){
-	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+	$con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
+	if(!$con)
+	{
+	echo  mysqli_connect_error(); 
+	exit;
+	}
 	$sql = $sql = "UPDATE cart_items SET status='REJECTED' WHERE id='".$_POST['dishIDToReject']."'";
 	mysqli_query($con,$sql);
 }
 
 function acceptDish() {
-	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+	$con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
+	if(!$con)
+	{
+	echo  mysqli_connect_error(); 
+	exit;
+	}
 	$sql = "UPDATE cart_items SET status='ACCEPTED' WHERE id='".$_POST['dishIDToAccept']."'";
 	mysqli_query($con,$sql);
 }
 
 function doneDish(){
-	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+	$con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
+	if(!$con)
+	{
+	echo  mysqli_connect_error(); 
+	exit;
+	}
 	$sql = "UPDATE cart_items SET status='READY' WHERE id='".$_POST['dishIDToPickUp']."'";
 	mysqli_query($con,$sql);
 }

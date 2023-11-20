@@ -159,14 +159,24 @@ if(isSet($_POST['editStaffButton'])){
 
 function getListOfStaff()
 {
-	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+	$con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
+	if(!$con)
+	{
+	echo  mysqli_connect_error(); 
+	exit;
+	}
 	$sql = "select * from user_info where userType='STAFF'";
 	$qry = mysqli_query($con,$sql);
 	return $qry;  
 }
 
 function deleteStaff($email){
-	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+	$con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
+	if(!$con)
+	{
+	echo  mysqli_connect_error(); 
+	exit;
+	}
 	$sql = "delete from user_info where email='".$email."'";
 	mysqli_query($con,$sql);
 	echo "<script>window.top.location='staffList.php'</script>";

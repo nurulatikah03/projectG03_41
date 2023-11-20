@@ -36,7 +36,7 @@ include "processOTP.php";
                                                 <label for="inputEmail">Email address</label>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <a class="small" href="loginPage.php">Return to login</a>
+                                                <a class="small" href="../loginPage.php">Return to login</a>
                                                 <button class="btn btn-primary" type="submit" name="resetButton">Reset</button>
                                             </div>
                                         </form>

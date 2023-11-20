@@ -45,10 +45,10 @@
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-						<div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="../../dashboard/dashboardStaff.html">
+						<div class="sb-sidenav-menu-heading">Order</div>
+                            <a class="nav-link" href="../../dashboard/dashboardStaff.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Dashboard
+                                View Order
                             </a>
 							<div class="sb-sidenav-menu-heading">Customer</div>
 							<a class="nav-link" href="../../dashboard/customerList/customerList-Staff.php">
@@ -60,11 +60,6 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-cutlery"></i></div>
                                 View Menu
                             </a>
-							<div class="sb-sidenav-menu-heading">Order</div>
-							<a class="nav-link" href="../../dashboard/viewOrder-Staff.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-cutlery"></i></div>
-                                View Order
-							</a>
 							<div class="sb-sidenav-menu-heading">Feedback</div>
 							<a class="nav-link" href="#">
                                 <div class="sb-nav-link-icon"><i class="fas fa-thumbs-up"></i></div>
@@ -128,13 +123,13 @@
 <?php
 function getFeedback()
 {
-$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
-$sql='select * from feedbackcustomer';
-if(!$con)
+$con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
+	if(!$con)
 	{
 	echo  mysqli_connect_error(); 
 	exit;
 	}
+$sql='select * from feedbackcustomer';
 $qry=mysqli_query($con,$sql);
 return $qry;
 }

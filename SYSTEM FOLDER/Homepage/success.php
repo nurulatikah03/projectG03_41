@@ -20,10 +20,7 @@ $qryPaidDish=getDishPaid();
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 <style type="text/css">
-    	/* -------------------------------------
-    GLOBAL
-    A very basic CSS reset
-------------------------------------- */
+
 * {
     margin: 0;
     padding: 0;
@@ -364,7 +361,7 @@ Company KFC
 </html>
 <?php
 function getItemsPaid(){
-	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+	$con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
 	if(!$con)
 	{
 	echo  mysqli_connect_error(); 
@@ -377,7 +374,7 @@ function getItemsPaid(){
 }
 
 function getUserDetails(){
-	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+	$con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
 	if(!$con)
 	{
 	echo  mysqli_connect_error(); 
@@ -390,7 +387,7 @@ function getUserDetails(){
 }
 
 function successToPay($dishID){
-	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+	$con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
 	if(!$con)
 	{
 	echo  mysqli_connect_error(); 
@@ -401,7 +398,7 @@ function successToPay($dishID){
 }
 
 function getDishPendingPayment(){
-	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+	$con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
 	if(!$con)
 	{
 	echo  mysqli_connect_error(); 
@@ -414,7 +411,7 @@ function getDishPendingPayment(){
 }
 
 function getDishPaid(){
-	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+	$con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
 	if(!$con)
 	{
 	echo  mysqli_connect_error(); 

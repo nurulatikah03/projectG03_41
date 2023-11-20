@@ -69,11 +69,12 @@ if (isset($_POST['editDetailsButton'])) {
 
 function editDetails()
 {
-    $con = mysqli_connect("localhost", "sd41g3", "sd41g3", "sd41g3");
-
-    if (!$con) {
-        echo "Error: " . mysqli_connect_error($con);
-    } else {
+    $con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
+	if(!$con)
+	{
+	echo  mysqli_connect_error(); 
+	exit;
+	} else {
         $email = $_SESSION['emailLogin'];
         $firstName = $_POST['newFirstName'];
         $lastName = $_POST['newLastName'];
@@ -92,11 +93,12 @@ function editDetails()
 
 function getUserType($email)
 {
-    $con = mysqli_connect("localhost", "sd41g3", "sd41g3", "sd41g3");
-    if (!$con) {
-        echo mysqli_connect_error();
-        exit;
-    }
+    $con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
+	if(!$con)
+	{
+	echo  mysqli_connect_error(); 
+	exit;
+	}
     $sql = "SELECT * FROM user_info where email = '" . $email . "'";
     $result = mysqli_query($con, $sql);
     $count = mysqli_num_rows($result);
@@ -108,11 +110,12 @@ function getUserType($email)
 }
 
 function getUserDetails(){
-	$con = mysqli_connect("localhost", "sd41g3", "sd41g3", "sd41g3");
-    if (!$con) {
-        echo mysqli_connect_error();
-        exit;
-    }
+	$con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
+	if(!$con)
+	{
+	echo  mysqli_connect_error(); 
+	exit;
+	}
 	$email = $_SESSION['emailLogin'];
     $sql = "SELECT * FROM user_info where email = '" . $email . "'";
     $qry = mysqli_query($con, $sql);

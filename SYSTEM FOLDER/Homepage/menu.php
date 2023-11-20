@@ -73,11 +73,11 @@ include "add_to_database.php";
 	        	<li class="nav-item"><a href="menu.php" class="nav-link">Menu</a></li>
 				<li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
 				<li class="nav-item"><a href="../mainMenu/customer/profileCustomer.php" class="nav-link">Profile</a></li>
-				<li class="nav-item"><a href="../mainMenu/loginPage.php" class="nav-link">Logout</a></li>
+				<li class="nav-item"><a href="../mainMenu/logout.php" class="nav-link">Logout</a></li>
 				<li class="nav-item cta"><a href="feedback.php" class="nav-link">Share Your Feedback</a></li>
 		<div class="sidenav">
 			<ul style="list-style-type: none; padding: 0;">
-				<li class="nav-item"><a href="orderList.php" class="nav-link" onclick="addCartItemToDatabase()"><span class="icon-shopping-cart"></span></a></li>
+				<li class="nav-item"><a href="OrderList.php" class="nav-link" onclick="addCartItemToDatabase()"><span class="icon-shopping-cart"></span></a></li>
 			</ul>
 		</div>  
 			</ul>
@@ -550,14 +550,24 @@ function addCartItemToDatabase() {
 <?php
 
 function getMenuList(){
-	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+	$con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
+	if(!$con)
+	{
+	echo  mysqli_connect_error(); 
+	exit;
+	}
 	$sql = "SELECT * FROM menu ORDER BY dishType";
 	$query = mysqli_query($con,$sql);
 	return $query;
 }
 
 function getListFromDishType($selectedDishType){
-	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+	$con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
+	if(!$con)
+	{
+	echo  mysqli_connect_error(); 
+	exit;
+	}
 	$sql = "SELECT * FROM menu WHERE dishType ='".$selectedDishType."'";
 	$query = mysqli_query($con,$sql);
 	return $query;

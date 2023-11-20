@@ -97,7 +97,12 @@ function addNewStaff(){
 	$lastName=$_POST['lastName'];
 	$phoneNum=$_POST['phoneNum'];
 	$userType="STAFF";
-	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+	$con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
+	if(!$con)
+	{
+	echo  mysqli_connect_error(); 
+	exit;
+	}
 	$sql = "insert into user_info(email,password,firstName,lastName,userType,phoneNum) values('$email', '$password','$firstName','$lastName','$userType','$phoneNum')";
 	mysqli_query($con,$sql);
 }

@@ -20,7 +20,12 @@ if(isset($_POST["submit_admin"])||isset($_POST["submit_staff"])){
 				$dishPrice=$_POST['dishPrice'];
 				$dishType=$_POST['dishType'];
 				$aboutDish=$_POST['aboutDish'];
-                $con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+                $con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
+            	if(!$con)
+            	{
+            	echo  mysqli_connect_error(); 
+            	exit;
+            	}
 				$sql = "insert into menu(nameDish,dishPrice,dishType,aboutDish,image_path) values('$dishName','$dishPrice','$dishType','$aboutDish','$fileName')";
                 mysqli_query($con,$sql);
                 $statusMsg = "The image has been uploaded successfully."; 

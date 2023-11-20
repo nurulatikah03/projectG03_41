@@ -69,7 +69,7 @@ $qryHistory=getOrderHistory();
 	        	<li class="nav-item"><a href="../../Homepage/menu.php" class="nav-link">Menu</a></li>
 	          <li class="nav-item"><a href="../../Homepage/contact.html" class="nav-link">Contact</a></li>
 			  <li class="nav-item"><a href="profileCustomer.php" class="nav-link">Profile</a></li>
-			  <li class="nav-item"><a href="../../mainMenu/loginPage.php" class="nav-link">Logout</a></li>
+			  <li class="nav-item"><a href="../../mainMenu/logout.php" class="nav-link">Logout</a></li>
 	          <li class="nav-item cta"><a href="../../Homepage/feedback.php" class="nav-link">Share Your Feedback</a></li>
 	        </ul>
 	      </div>
@@ -288,8 +288,8 @@ $qryHistory=getOrderHistory();
 <?php
 function getUserInfo()
 {
-$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
-if(!$con)
+$con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
+	if(!$con)
 	{
 	echo  mysqli_connect_error(); 
 	exit;
@@ -302,8 +302,8 @@ if(!$con)
 
 function getOrderHistory()
 {
-$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
-if(!$con)
+$con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
+	if(!$con)
 	{
 	echo  mysqli_connect_error(); 
 	exit;

@@ -156,14 +156,24 @@ if(isSet($_POST['editCustomerButton'])){
 
 function getListOfCustomer()
 {
-	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+	$con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
+	if(!$con)
+	{
+	echo  mysqli_connect_error(); 
+	exit;
+	}
 	$sql = "select * from user_info where userType='CUSTOMER'";
 	$qry = mysqli_query($con,$sql);
 	return $qry;  
 }
 
 function deleteCustomer($email){
-	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+	$con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
+	if(!$con)
+	{
+	echo  mysqli_connect_error(); 
+	exit;
+	}
 	$sql = "delete from user_info where email='".$email."'";
 	mysqli_query($con,$sql);
 	echo "<script>window.top.location='customerList.php'</script>";

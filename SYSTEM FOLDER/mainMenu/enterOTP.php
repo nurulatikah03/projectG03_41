@@ -31,7 +31,7 @@ session_start();
                                         <div class="small mb-3 text-muted">Enter Your OTP</div>
                                         <form action="registerPage.php" method="POST">
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="newPassword" type="text" placeholder="otp" name="otpEntered" required>
+                                                <input class="form-control" id="newPassword" type="text" placeholder="Check your email to get the otp" name="otpEntered" required>
                                                 <label for="inputEmail">OTP</label>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">

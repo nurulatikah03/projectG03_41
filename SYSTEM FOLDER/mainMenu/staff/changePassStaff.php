@@ -58,7 +58,7 @@ if(isSet($_POST['resetButton'])){
 
 function changePassword(){
 	$emailToChangePass=$_SESSION['emailLogin'];
-	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+	$con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
 	if(!$con)
 	{
 	echo  mysqli_connect_error(); 

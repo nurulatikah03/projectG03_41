@@ -78,14 +78,24 @@ function editInfoStaff(){
 	$firstName=$_POST['firstName'];
 	$lastName=$_POST['lastName'];
 	$phoneNum=$_POST['phoneNum'];
-	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+	$con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
+	if(!$con)
+	{
+	echo  mysqli_connect_error(); 
+	exit;
+	}
 	$sql = "update user_info SET firstName='".$firstName."' ,lastName='".$lastName."',phoneNum='".$phoneNum."' WHERE email='".$staffEmailToEdit."'";
 	mysqli_query($con,$sql);
 }
 
 function getEditingStaffInfo(){
 	$staffEmailToEdit=$_SESSION['staffEmailToEdit'];
-	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+	$con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
+	if(!$con)
+	{
+	echo  mysqli_connect_error(); 
+	exit;
+	}
 	$sql = "SELECT * FROM user_info WHERE email='".$staffEmailToEdit."'";
 	$query=mysqli_query($con,$sql);
 	return $query;

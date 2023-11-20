@@ -140,9 +140,9 @@
 <?php
 function getFeedback()
 {
-$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
 $sql='select * from feedbackcustomer';
-if(!$con)
+$con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
+	if(!$con)
 	{
 	echo  mysqli_connect_error(); 
 	exit;

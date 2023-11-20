@@ -203,13 +203,23 @@ if(isSet($_POST['deleteDishButton'])){
 	deleteImage($_POST['dishNameToDelete']);
 }
 function getListOfImage(){
-	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+	$con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
+	if(!$con)
+	{
+	echo  mysqli_connect_error(); 
+	exit;
+	}
 	$sql = "SELECT * FROM menu ORDER BY id";
 	$query = mysqli_query($con,$sql);
 	return $query;
 }
 function deleteImage($nameDish){
-	$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
+	$con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
+	if(!$con)
+	{
+	echo  mysqli_connect_error(); 
+	exit;
+	}
 	$sql = "delete from menu where nameDish='".$nameDish."'";
 	mysqli_query($con,$sql);
 	echo "<script>window.top.location='viewMenu-admin.php'</script>";

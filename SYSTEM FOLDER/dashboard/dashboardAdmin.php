@@ -151,8 +151,8 @@ while ($row=mysqli_fetch_assoc($salesQry)){
 <?php
 function getCustomerNum()
 {
-$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
-if(!$con)
+$con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
+	if(!$con)
 	{
 	echo  mysqli_connect_error(); 
 	exit;
@@ -164,8 +164,8 @@ if(!$con)
 
 function getStaffNum()
 {
-$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
-if(!$con)
+$con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
+	if(!$con)
 	{
 	echo  mysqli_connect_error(); 
 	exit;
@@ -177,8 +177,8 @@ if(!$con)
 
 function getMenuNum()
 {
-$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
-if(!$con)
+$con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
+	if(!$con)
 	{
 	echo  mysqli_connect_error(); 
 	exit;
@@ -190,8 +190,8 @@ if(!$con)
 
 function getSales()
 {
-$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
-if(!$con)
+$con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
+	if(!$con)
 	{
 	echo  mysqli_connect_error(); 
 	exit;
@@ -203,8 +203,8 @@ if(!$con)
 
 function getFeedbackNum()
 {
-$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
-if(!$con)
+$con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
+	if(!$con)
 	{
 	echo  mysqli_connect_error(); 
 	exit;

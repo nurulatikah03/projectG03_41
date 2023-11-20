@@ -1,12 +1,10 @@
 <?php
 session_start();
 $qry=getCartItems();
-//$row['email'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  
 	<style>
 		.icon-shopping-cart {
 		font-size: 20px}
@@ -82,7 +80,7 @@ $qry=getCartItems();
 	        	<li class="nav-item"><a href="menu.php" class="nav-link">Menu</a></li>
 	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
 			  <li class="nav-item"><a href="../mainMenu/customer/profileCustomer.php" class="nav-link">Profile</a></li>
-			  <li class="nav-item"><a href="../mainMenu/loginPage.php" class="nav-link">Logout</a></li>
+			  <li class="nav-item"><a href="../mainMenu/logout.php" class="nav-link">Logout</a></li>
 	          <li class="nav-item cta"><a href="../mainMenu/feedback.php" class="nav-link">Share Your Feedback</a></li>
 			  
 			  <li class="nav-item"><a href="orderList.php" class="nav-link"><span class="icon-shopping-cart"></span></a></li>
@@ -191,8 +189,8 @@ $qry=getCartItems();
 <?php
 function getCartItems()
 {
-$con=mysqli_connect("localhost","sd41g3","sd41g3","sd41g3");
-if(!$con)
+    $con=mysqli_connect("localhost","u337610268_sd41g3","omLZ9ekw","u337610268_sd41g3");
+	if(!$con)
 	{
 	echo  mysqli_connect_error(); 
 	exit;
@@ -202,7 +200,6 @@ if(!$con)
 	$qry=mysqli_query($con,$sql);
 	$totalRows = ($qry) ? mysqli_num_rows($qry) : 0;
 	return $qry;
-	
 }
 
 ?>
